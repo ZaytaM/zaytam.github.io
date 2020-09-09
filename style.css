@@ -9,9 +9,18 @@ section{
     position: relative;
     animation: change 100s ease-in-out infinite;
 }
+h2{
+  font-size: 20px
+}
+strong{
+  font-size: 20px
+}
 
 p{
   font-size: 20px
+}
+li{
+  font-size: 15px
 }
 @keyframes change {
   0%{
