@@ -5,7 +5,7 @@ section{
     background: linear-gradient(-45deg,  #7b7d7d  , #626567 ,#4d5656,  #000000  );
     background-size: 400% 400;
     position: relative;
-    animation: change 10s ease-in-out infinite;
+    animation: change 1s;
 }
 @@keyframes change {
   0%{
