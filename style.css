@@ -24,3 +24,5 @@ p{
     background-position: 0 50%;
   }
 }
+
+a { color: inherit; } 
