@@ -22,6 +22,9 @@ p{
 li{
   font-size: 20px
 }
+dd{
+  font-size: 15px
+}
 @keyframes change {
   0%{
     background-position: 0 50%;
