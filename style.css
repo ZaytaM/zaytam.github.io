@@ -6,7 +6,7 @@ section{
     background: linear-gradient(-45deg,   #424949 , #000000, #424949,  #000000, #424949,  #000000, #424949 , #000000, #424949,  #000000, #424949,  #000000 );
     background-size: 400% 400%;
     position: relative;
-    animation: change 10s ease-in-out infinite;
+    animation: change 100s ease-in-out infinite;
 }
 
 p{
