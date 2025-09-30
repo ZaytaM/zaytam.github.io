@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seminar Schedule</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; }
+    h1 { text-align: center; }
+    .semester { margin-top: 2rem; }
+    .seminar { padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
+    .date { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Seminar Schedule</h1>
+  <div id="seminars"></div>
+
+  <script>
+    const sheetURL = "YOUR_PUBLISHED_SHEET_URL_HERE"; // the CSV URL
+
+    async function loadSeminars() {
+      const res = await fetch(sheetURL);
+      const text = await res.text();
+      const rows = text.split("\n").map(r => r.split(","));
+      
+      // header row
+      const [header, ...data] = rows;
+
+      // map rows to objects
+      const seminars = data
+        .filter(r => r.length >= 4) // skip empty rows
+        .map(r => ({
+          date: r[0].trim(),
+          semester: r[1].trim(),
+          title: r[2].trim(),
+          speaker: r[3].trim(),
+          location: r[4] ? r[4].trim() : ""
+        }))
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      // group by semester
+      const grouped = {};
+      for (const s of seminars) {
+        if (!grouped[s.semester]) grouped[s.semester] = [];
+        grouped[s.semester].push(s);
+      }
+
+      // render
+      const container = document.getElementById("seminars");
+      container.innerHTML = "";
+      for (const semester of Object.keys(grouped)) {
+        const div = document.createElement("div");
+        div.className = "semester";
+        div.innerHTML = `<h2>${semester}</h2>` +
+          grouped[semester].map(s => `
+            <div class="seminar">
+              <div class="date">${s.date}</div>
+              <div class="title">${s.title}</div>
+              <div class="speaker">${s.speaker}</div>
+              <div class="location">${s.location}</div>
+            </div>
+          `).join("");
+        container.appendChild(div);
+      }
+    }
+
+    loadSeminars();
+  </script>
+</body>
+</html>
