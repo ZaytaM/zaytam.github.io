@@ -65,7 +65,7 @@
     <h3 style="font-size:1.15em; font-family:'Cardo',serif;">Time &amp; Place</h3>
     <div style="font-size:1.13em; font-family:'Crimson Text',serif; margin-bottom:1.2em;">
         Wednesdays, 3:30 PM<br>
-        PMA 10.176
+        PMA 7.124
     </div>
 
     <h3 style="font-size:1.15em; font-family:'Cardo',serif;">Organizers</h3>
@@ -73,7 +73,7 @@
         Matias Delgadino (<a>matias.delgadino at math.utexas.edu</a>)<br>
         Joe Kileel (<a>jkileel at math.utexas.edu</a>)<br>
     </div>
-    </p>
+    <!-- Removed stray closing </p> tag -->
     <div id="seminar-list"></div>
     <div class="footer">
         <a href="https://www.ma.utexas.edu/research/seminars">Other Seminars</a> |
@@ -107,7 +107,7 @@
                 semesterOrder.forEach((semester, idx) => {
                     const checkboxId = `semester${idx}`;
                     let html = `
-                        <input id="${checkboxId}" type="checkbox" ${idx === 0 ? "checked" : ""}>
+                        <input id="${checkboxId}" type="checkbox" ${idx === 1 ? "checked" : ""}>
                         <h3 class="year fakelink">
                             <label class="oneyear" for="${checkboxId}">
                                 ${semester}
