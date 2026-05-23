@@ -40,6 +40,8 @@
         .info { font-family: 'Crimson Text', serif; font-size: 1.13em; margin-bottom: 1.2em; }
         .semester { cursor: pointer; color: #BF5700; }
         .date { font-weight: bold; display: block; margin-top: 1em; color: #333F48; }
+        .meta { font-size: 0.9em; color: #666; margin-bottom: 0.3em; }
+        .meta .override { color: #BF5700; font-weight: 600; }
         .speakerinfo { margin-bottom: 2em; }
         .speakerhead {
             background-color: #F2E6E5;
@@ -112,7 +114,7 @@
     <div id="next-talk"></div>
 
     <h3>Time &amp; Place</h3>
-    <div class="info">Wednesdays, 11:00 AM<br>TBD</div>
+    <div class="info">Wednesdays, 11:00 AM &middot; PMA 7.124 <span style="font-size:0.85em;color:#666;">(unless noted)</span></div>
 
     <h3>Organizers</h3>
     <div class="info">
@@ -125,6 +127,18 @@
 
     <script>
         const semOrder = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
+        const DEFAULT_TIME = "11:00 AM";
+        const DEFAULT_LOCATION = "PMA 7.124";
+
+        function metaLine(s) {
+            const time = s.Time || DEFAULT_TIME;
+            const loc = s.Location || DEFAULT_LOCATION;
+            const customTime = !!s.Time && s.Time !== DEFAULT_TIME;
+            const customLoc = !!s.Location && s.Location !== DEFAULT_LOCATION;
+            const t = `<span class="${customTime ? "override" : ""}">${escapeHTML(time)}</span>`;
+            const l = `<span class="${customLoc ? "override" : ""}">${escapeHTML(loc)}</span>`;
+            return `${t} &middot; ${l}`;
+        }
 
         function parseDate(s) {
             if (!s) return null;
@@ -138,7 +152,9 @@
                 ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
         }
 
-        Papa.parse("cam-seminar.csv", {
+        const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTVky22hZiBNKmHWtXK38P4L0AdYLXnxRkOcXhzPlfMGvqWVqxmYIIUD2iyLAiCbIrutSmCR_45Bj4U/pub?output=csv&cb=" + Date.now();
+
+        Papa.parse(csvURL, {
             download: true,
             header: true,
             skipEmptyLines: true,
@@ -180,6 +196,7 @@
                         <div class="next-talk">
                             <div class="label">Next talk</div>
                             <div class="when">${escapeHTML(when)}</div>
+                            <div class="meta">${metaLine(nextTalk)}</div>
                             <div class="who">${nameLink}${nextTalk.Institution ? ` (${escapeHTML(nextTalk.Institution)})` : ""}</div>
                             ${nextTalk.Title ? `<div class="what">${escapeHTML(nextTalk.Title)}</div>` : ""}
                         </div>
@@ -214,6 +231,7 @@
                             return `
                                 <span class="date">${escapeHTML(s.Date)}</span>
                                 <div class="speakerinfo${isNext ? " upcoming-next" : ""}">
+                                    <div class="meta">${metaLine(s)}</div>
                                     <div class="speakerhead">
                                         <h4>${name}${s.Institution ? ` (${escapeHTML(s.Institution)})` : ""}</h4>
                                         <br>${escapeHTML(s.Title || "")}
