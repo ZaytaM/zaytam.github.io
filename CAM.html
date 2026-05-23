@@ -6,6 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="keywords" content="math, mathematics, texas, austin, UT, utexas, analysis, seminar">
     <title>CAM Seminar Schedule</title>
+
+    <meta property="og:title" content="CAM Seminar — UT Austin">
+    <meta property="og:description" content="Computational and Applied Mathematics Seminar, Department of Mathematics, University of Texas at Austin.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="UT Austin Mathematics">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CAM Seminar — UT Austin">
+    <meta name="twitter:description" content="Computational and Applied Mathematics Seminar, UT Austin.">
+
     <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic,700|Crimson+Text:400,400italic,600,600italic" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <style>
@@ -46,6 +55,30 @@
             color: #333F48;
             text-align: justify;
         }
+
+        .next-talk {
+            border-left: 4px solid #BF5700;
+            background: #FFF6EE;
+            padding: 0.8em 1em;
+            margin: 1.5em 0;
+            border-radius: 0.2em;
+        }
+        .next-talk .label {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #BF5700;
+            font-weight: 600;
+        }
+        .next-talk .when { font-weight: bold; margin-top: 0.2em; }
+        .next-talk .who { margin-top: 0.2em; }
+        .next-talk .what { font-style: italic; margin-top: 0.2em; }
+        .speakerinfo.upcoming-next .speakerhead {
+            background-color: #FFF6EE;
+            border-left: 4px solid #BF5700;
+        }
+
         input[type="checkbox"] { display: none; }
         input[type="checkbox"] + h3 label::before { content: "+ "; font-weight: bold; color: #BF5700; }
         input[type="checkbox"]:checked + h3 label::before { content: "– "; }
@@ -68,12 +101,15 @@
             .info { font-size: 1em; }
             .speakerhead h4 { font-size: 1em; }
             .abstract { margin-left: 0.2em; font-size: 0.95em; }
+            .next-talk { padding: 0.6em 0.8em; }
         }
     </style>
 </head>
 <body>
     <h1>Computational and Applied Mathematics Seminar</h1>
     <h2>Department of Mathematics, University of Texas at Austin</h2>
+
+    <div id="next-talk"></div>
 
     <h3>Time &amp; Place</h3>
     <div class="info">Wednesdays, 11:00 AM<br>TBD</div>
@@ -88,24 +124,66 @@
     <div id="seminar-list"></div>
 
     <script>
-        const csvURL = "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vTVky22hZiBNKmHWtXK38P4L0AdYLXnxRkOcXhzPlfMGvqWVqxmYIIUD2iyLAiCbIrutSmCR_45Bj4U/pub?output=csv";
-
         const semOrder = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
 
-        Papa.parse(csvURL, {
+        function parseDate(s) {
+            if (!s) return null;
+            const m = s.trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (!m) return null;
+            return new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
+        }
+
+        function escapeHTML(s) {
+            return String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+                ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+        }
+
+        Papa.parse("cam-seminar.csv", {
             download: true,
             header: true,
             skipEmptyLines: true,
             error: function(err) {
                 document.getElementById("seminar-list").innerHTML =
-                    `<p style="color:#BF5700;">Could not load seminar data: ${err.message || err}</p>`;
+                    `<p style="color:#BF5700;">Could not load seminar data: ${escapeHTML(err.message || err)}</p>`;
             },
             complete: function(results) {
-                const seminars = results.data.filter(r => r.Date && r.Semester && r.Speaker);
+                const seminars = results.data
+                    .map(r => {
+                        const out = {};
+                        for (const k in r) out[k.trim()] = (r[k] || "").trim();
+                        out._date = parseDate(out.Date);
+                        return out;
+                    })
+                    .filter(r => r.Date && r.Semester && r.Speaker);
+
                 if (!seminars.length) {
                     document.getElementById("seminar-list").innerHTML =
                         `<p style="color:#BF5700;">No seminar data found.</p>`;
                     return;
+                }
+
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const upcoming = seminars
+                    .filter(s => s._date && s._date >= today)
+                    .sort((a, b) => a._date - b._date);
+                const nextTalk = upcoming[0] || null;
+
+                if (nextTalk) {
+                    const nameLink = nextTalk.Website && nextTalk.Website.startsWith("http")
+                        ? `<a class="speakerpage" href="${escapeHTML(nextTalk.Website)}" target="_blank">${escapeHTML(nextTalk.Speaker)}</a>`
+                        : escapeHTML(nextTalk.Speaker);
+                    const when = nextTalk._date.toLocaleDateString(undefined, {
+                        weekday: "long", month: "long", day: "numeric", year: "numeric"
+                    });
+                    document.getElementById("next-talk").innerHTML = `
+                        <div class="next-talk">
+                            <div class="label">Next talk</div>
+                            <div class="when">${escapeHTML(when)}</div>
+                            <div class="who">${nameLink}${nextTalk.Institution ? ` (${escapeHTML(nextTalk.Institution)})` : ""}</div>
+                            ${nextTalk.Title ? `<div class="what">${escapeHTML(nextTalk.Title)}</div>` : ""}
+                        </div>
+                    `;
                 }
 
                 const grouped = {};
@@ -124,28 +202,32 @@
                 document.getElementById("seminar-list").innerHTML = semesters.map((key, idx) => {
                     const [year, semester] = key.split("|");
                     const id = `semester${idx}`;
-                    const talks = grouped[key].map((s, i) => {
-                        const speakerId = `${id}_speaker${i}`;
-                        const name = s.Website && s.Website.startsWith("http")
-                            ? `<a class="speakerpage" href="${s.Website}" target="_blank">${s.Speaker}</a>`
-                            : s.Speaker;
-                        return `
-                            <span class="date">${s.Date}</span>
-                            <div class="speakerinfo">
-                                <div class="speakerhead">
-                                    <h4>${name}${s.Institution ? ` (${s.Institution})` : ""}</h4>
-                                    <br>${s.Title || ""}
+                    const talks = grouped[key]
+                        .slice()
+                        .sort((a, b) => (a._date && b._date) ? a._date - b._date : 0)
+                        .map((s, i) => {
+                            const speakerId = `${id}_speaker${i}`;
+                            const name = s.Website && s.Website.startsWith("http")
+                                ? `<a class="speakerpage" href="${escapeHTML(s.Website)}" target="_blank">${escapeHTML(s.Speaker)}</a>`
+                                : escapeHTML(s.Speaker);
+                            const isNext = nextTalk && s === nextTalk;
+                            return `
+                                <span class="date">${escapeHTML(s.Date)}</span>
+                                <div class="speakerinfo${isNext ? " upcoming-next" : ""}">
+                                    <div class="speakerhead">
+                                        <h4>${name}${s.Institution ? ` (${escapeHTML(s.Institution)})` : ""}</h4>
+                                        <br>${escapeHTML(s.Title || "")}
+                                    </div>
+                                    <input id="${speakerId}" type="checkbox">
+                                    <label class="abstract-toggle" for="${speakerId}"></label>
+                                    <div class="abstract"><p>${escapeHTML(s.Abstract || "")}</p></div>
                                 </div>
-                                <input id="${speakerId}" type="checkbox">
-                                <label class="abstract-toggle" for="${speakerId}"></label>
-                                <div class="abstract"><p>${s.Abstract || ""}</p></div>
-                            </div>
-                        `;
-                    }).join("");
+                            `;
+                        }).join("");
 
                     return `
                         <input id="${id}" type="checkbox" ${idx === 0 ? "checked" : ""}>
-                        <h3><label class="semester" for="${id}">${semester} ${year}</label></h3>
+                        <h3><label class="semester" for="${id}">${escapeHTML(semester)} ${escapeHTML(year)}</label></h3>
                         <div class="semester-body">${talks}</div>
                     `;
                 }).join("");
