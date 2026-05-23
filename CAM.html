@@ -3,143 +3,92 @@
 <head>
     <meta name="google-site-verification" content="tR1HXr-3pdRbC6rAIAIefun_PB29wIeFA1S95w-Nofw" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="keywords" content="math, mathematics, texas, austin, UT, utexas, analysis, seminar">
     <title>CAM Seminar Schedule</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="seminar.css" />
-    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic,700|Crimson+Text:400,400italic,600,600italic" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <style>
-    body { font-family: 'Sorts Mill Goudy', 'Cardo', 'Crimson Text', serif; padding: 0 50px; max-width: 900px; margin: auto; background: #fff; }
-    h1 { font-family: 'Cardo', serif; font-size: 2.2em; margin-top: 1.5em; }
-    h2 { font-family: 'Crimson Text', serif; font-size: 1.3em; margin-bottom: 1em; }
-    h3.year { margin-top: 2em; font-size: 1.2em; }
-    .oneyear { cursor: pointer; }
-    .date { font-weight: bold; display: block; margin-top: 1em; }
-    .speakerinfo { margin-bottom: 2em; }
-    .speakerhead h4 { display: inline; margin-right: 0.5em; font-size: 1.1em; }
-    .speakerpage { color: #1565c0; text-decoration: none; }
-    .abstract { margin: 0.5em 0 0.5em 1em; font-size: 1em; color: #444; }
-    .footer { margin-top: 3em; font-size: 0.95em; color: #888; }
-    input[type="checkbox"] { display: none; }
-
-    /* Semester toggle icon */
-    input[type="checkbox"] + h3 label.oneyear::before {
-        content: "+ ";
-        font-weight: bold;
-        color: #1565c0;
-        transition: content 0.2s;
-    }
-    input[type="checkbox"]:checked + h3 label.oneyear::before {
-        content: "– ";
-        font-weight: bold;
-        color: #1565c0;
-    }
-
-    /* Abstract toggle icon */
-    input[type="checkbox"] + label.abstract-toggle::before {
-        content: "+ ";
-        font-weight: bold;
-        color: #888;
-        cursor: pointer;
-        margin-right: 0.2em;
-    }
-    input[type="checkbox"]:checked + label.abstract-toggle::before {
-        content: "– ";
-        font-weight: bold;
-        color: #888;
-    }
-    input[type="checkbox"]:not(:checked) + label.abstract-toggle + .abstract {
-        display: none;
-    }
-    input[type="checkbox"]:checked + label.abstract-toggle + .abstract {
-        display: block;
-    }
-</style>
+        body { font-family: 'Cardo', 'Crimson Text', serif; padding: 0 50px; max-width: 900px; margin: auto; background: #fff; }
+        h1 { font-size: 2.2em; margin-top: 1.5em; }
+        h2 { font-family: 'Crimson Text', serif; font-size: 1.3em; margin-bottom: 1em; }
+        h3 { font-size: 1.15em; margin-top: 1.5em; }
+        .info { font-family: 'Crimson Text', serif; font-size: 1.13em; margin-bottom: 1.2em; }
+        .semester { cursor: pointer; color: #1565c0; }
+        .date { font-weight: bold; display: block; margin-top: 1em; }
+        .speakerinfo { margin-bottom: 2em; }
+        .speakerhead h4 { display: inline; margin-right: 0.5em; font-size: 1.1em; }
+        .speakerpage { color: #1565c0; text-decoration: none; }
+        .abstract { margin: 0.5em 0 0.5em 1em; font-size: 1em; color: #444; }
+        input[type="checkbox"] { display: none; }
+        input[type="checkbox"] + h3 label::before { content: "+ "; font-weight: bold; color: #1565c0; }
+        input[type="checkbox"]:checked + h3 label::before { content: "– "; }
+        input[type="checkbox"] + label.abstract-toggle::before { content: "+ "; font-weight: bold; color: #888; cursor: pointer; margin-right: 0.2em; }
+        input[type="checkbox"]:checked + label.abstract-toggle::before { content: "– "; }
+        input[type="checkbox"]:not(:checked) + label.abstract-toggle + .abstract { display: none; }
+    </style>
 </head>
 <body>
     <h1>Computational and Applied Mathematics Seminar</h1>
     <h2>Department of Mathematics, University of Texas at Austin</h2>
 
-    <h3 style="font-size:1.15em; font-family:'Cardo',serif;">Time &amp; Place</h3>
-    <div style="font-size:1.13em; font-family:'Crimson Text',serif; margin-bottom:1.2em;">
-        Wednesdays, 3:30 PM<br>
-        PMA 7.124
+    <h3>Time &amp; Place</h3>
+    <div class="info">Wednesdays, 11:00 AM<br>TBD</div>
+
+    <h3>Organizers</h3>
+    <div class="info">
+        Matias Delgadino (matias.delgadino at math.utexas.edu)<br>
+        Joe Kileel (jkileel at math.utexas.edu)<br>
+        Margaret Trautner (margaret.trautner at math.utexas.edu)
     </div>
 
-    <h3 style="font-size:1.15em; font-family:'Cardo',serif;">Organizers</h3>
-    <div style="font-size:1.13em; font-family:'Crimson Text',serif;">
-        Matias Delgadino (<a>matias.delgadino at math.utexas.edu</a>)<br>
-        Joe Kileel (<a>jkileel at math.utexas.edu</a>)<br>
-    </div>
-    <!-- Removed stray closing </p> tag -->
     <div id="seminar-list"></div>
-    <div class="footer">
-        <a href="https://www.ma.utexas.edu/research/seminars">Other Seminars</a> |
-        <a href="https://web.ma.utexas.edu/cgi-pub/seminar/calendar">Seminar Calendar</a> |
-        <a href="https://www.ma.utexas.edu/events/month.calendar/">Event Calendar</a>
-    </div>
+
     <script>
-        // Use local CSV file if available, otherwise use Google Sheets with CORS proxy
-        const csvURL = "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vTVky22hZiBNKmHWtXK38P4L0AdYLXnxRkOcXhzPlfMGvqWVqxmYIIUD2iyLAiCbIrutSmCR_45Bj4U/pub?output=csv"; // Place this file in the same directory as CAM.html
+        const csvURL = "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vTVky22hZiBNKmHWtXK38P4L0AdYLXnxRkOcXhzPlfMGvqWVqxmYIIUD2iyLAiCbIrutSmCR_45Bj4U/pub?output=csv";
 
         Papa.parse(csvURL, {
             download: true,
             header: true,
             skipEmptyLines: true,
             complete: function(results) {
-                const seminars = results.data.filter(row => row.Date && row.Semester && row.Speaker);
-                // Group by Year + Semester
+                const seminars = results.data.filter(r => r.Date && r.Semester && r.Speaker);
                 const grouped = {};
                 seminars.forEach(s => {
                     const key = `${s.Year} ${s.Semester}`;
-                    if (!grouped[key]) grouped[key] = [];
-                    grouped[key].push(s);
+                    (grouped[key] = grouped[key] || []).push(s);
                 });
 
-                // Sort semesters (most recent first)
-                const semesterOrder = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
-
-                // Render
+                const semesters = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
                 const container = document.getElementById("seminar-list");
-                container.innerHTML = "";
-                semesterOrder.forEach((semester, idx) => {
-                    const checkboxId = `semester${idx}`;
-                    let html = `
-                        <input id="${checkboxId}" type="checkbox" ${idx === 1 ? "checked" : ""}>
-                        <h3 class="year fakelink">
-                            <label class="oneyear" for="${checkboxId}">
-                                ${semester}
-                            </label>
-                        </h3>
-                        <div>
-                    `;
-                    grouped[semester].forEach((s, i) => {
-                        const speakerId = `${checkboxId}_speaker${i}`;
-                        html += `
+
+                container.innerHTML = semesters.map((semester, idx) => {
+                    const id = `semester${idx}`;
+                    const talks = grouped[semester].map((s, i) => {
+                        const speakerId = `${id}_speaker${i}`;
+                        const name = s.Website && s.Website.startsWith("http")
+                            ? `<a class="speakerpage" href="${s.Website}" target="_blank">${s.Speaker}</a>`
+                            : s.Speaker;
+                        return `
                             <span class="date">${s.Date}</span>
                             <div class="speakerinfo">
                                 <div class="speakerhead">
-                                    <h4>
-                                        ${s.Website && s.Website.startsWith("http") ? `<a class="speakerpage" href="${s.Website}" target="_blank">${s.Speaker}</a>` : s.Speaker}
-                                        ${s.Institution ? ` (${s.Institution})` : ""}
-                                    </h4>
-                                    <br>
-                                    ${s.Title || ""}
+                                    <h4>${name}${s.Institution ? ` (${s.Institution})` : ""}</h4>
+                                    <br>${s.Title || ""}
                                 </div>
                                 <input id="${speakerId}" type="checkbox" checked>
-                                <label for="${speakerId}"></label>
-                                <div class="abstract">
-                                    <p>${s.Abstract || ""}</p>
-                                </div>
+                                <label class="abstract-toggle" for="${speakerId}"></label>
+                                <div class="abstract"><p>${s.Abstract || ""}</p></div>
                             </div>
                         `;
-                    });
-                    html += `</div>`;
-                    container.innerHTML += html;
-                });
+                    }).join("");
+
+                    return `
+                        <input id="${id}" type="checkbox" ${idx === 1 ? "checked" : ""}>
+                        <h3><label class="semester" for="${id}">${semester}</label></h3>
+                        <div>${talks}</div>
+                    `;
+                }).join("");
             }
         });
     </script>
