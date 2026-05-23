@@ -9,23 +9,66 @@
     <link href="https://fonts.googleapis.com/css?family=Cardo:400,400italic,700|Crimson+Text:400,400italic,600,600italic" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <style>
-        body { font-family: 'Cardo', 'Crimson Text', serif; padding: 0 50px; max-width: 900px; margin: auto; background: #fff; }
-        h1 { font-size: 2.2em; margin-top: 1.5em; }
+        body {
+            font-family: 'Cardo', 'Crimson Text', serif;
+            padding: 0 50px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            color: #333F48;
+        }
+        h1, h2 { color: #BF5700; }
+        h1 { font-size: 2.2em; margin-top: 1.5em; line-height: 1.2; }
         h2 { font-family: 'Crimson Text', serif; font-size: 1.3em; margin-bottom: 1em; }
-        h3 { font-size: 1.15em; margin-top: 1.5em; }
+        h3 {
+            font-size: 1.15em;
+            margin-top: 1.5em;
+            color: #333F48;
+            border-bottom: 1px solid #BF5700;
+            padding-bottom: 0.2em;
+        }
+        a { color: #BF5700; }
         .info { font-family: 'Crimson Text', serif; font-size: 1.13em; margin-bottom: 1.2em; }
-        .semester { cursor: pointer; color: #1565c0; }
-        .date { font-weight: bold; display: block; margin-top: 1em; }
+        .semester { cursor: pointer; color: #BF5700; }
+        .date { font-weight: bold; display: block; margin-top: 1em; color: #333F48; }
         .speakerinfo { margin-bottom: 2em; }
+        .speakerhead {
+            background-color: #F2E6E5;
+            padding: 0.4em 0.6em;
+            border-radius: 0.2em;
+            word-wrap: break-word;
+        }
         .speakerhead h4 { display: inline; margin-right: 0.5em; font-size: 1.1em; }
-        .speakerpage { color: #1565c0; text-decoration: none; }
-        .abstract { margin: 0.5em 0 0.5em 1em; font-size: 1em; color: #444; }
+        .speakerpage { color: #BF5700; text-decoration: none; }
+        .abstract {
+            margin: 0.5em 0 0.5em 1em;
+            font-size: 1em;
+            color: #333F48;
+            text-align: justify;
+        }
         input[type="checkbox"] { display: none; }
-        input[type="checkbox"] + h3 label::before { content: "+ "; font-weight: bold; color: #1565c0; }
+        input[type="checkbox"] + h3 label::before { content: "+ "; font-weight: bold; color: #BF5700; }
         input[type="checkbox"]:checked + h3 label::before { content: "– "; }
-        input[type="checkbox"] + label.abstract-toggle::before { content: "+ "; font-weight: bold; color: #888; cursor: pointer; margin-right: 0.2em; }
-        input[type="checkbox"]:checked + label.abstract-toggle::before { content: "– "; }
+        input[type="checkbox"]:not(:checked) + h3 + .semester-body { display: none; }
+        input[type="checkbox"] + label.abstract-toggle::before {
+            content: "+ Abstract";
+            font-weight: bold;
+            color: #BF5700;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        input[type="checkbox"]:checked + label.abstract-toggle::before { content: "– Abstract"; }
         input[type="checkbox"]:not(:checked) + label.abstract-toggle + .abstract { display: none; }
+
+        @media (max-width: 600px) {
+            body { padding: 0 16px; font-size: 16px; }
+            h1 { font-size: 1.6em; margin-top: 1em; }
+            h2 { font-size: 1.1em; }
+            h3 { font-size: 1.05em; }
+            .info { font-size: 1em; }
+            .speakerhead h4 { font-size: 1em; }
+            .abstract { margin-left: 0.2em; font-size: 0.95em; }
+        }
     </style>
 </head>
 <body>
@@ -47,24 +90,41 @@
     <script>
         const csvURL = "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vTVky22hZiBNKmHWtXK38P4L0AdYLXnxRkOcXhzPlfMGvqWVqxmYIIUD2iyLAiCbIrutSmCR_45Bj4U/pub?output=csv";
 
+        const semOrder = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
+
         Papa.parse(csvURL, {
             download: true,
             header: true,
             skipEmptyLines: true,
+            error: function(err) {
+                document.getElementById("seminar-list").innerHTML =
+                    `<p style="color:#BF5700;">Could not load seminar data: ${err.message || err}</p>`;
+            },
             complete: function(results) {
                 const seminars = results.data.filter(r => r.Date && r.Semester && r.Speaker);
+                if (!seminars.length) {
+                    document.getElementById("seminar-list").innerHTML =
+                        `<p style="color:#BF5700;">No seminar data found.</p>`;
+                    return;
+                }
+
                 const grouped = {};
                 seminars.forEach(s => {
-                    const key = `${s.Year} ${s.Semester}`;
+                    const key = `${s.Year}|${s.Semester}`;
                     (grouped[key] = grouped[key] || []).push(s);
                 });
 
-                const semesters = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
-                const container = document.getElementById("seminar-list");
+                const semesters = Object.keys(grouped).sort((a, b) => {
+                    const [ya, sa] = a.split("|");
+                    const [yb, sb] = b.split("|");
+                    if (ya !== yb) return Number(yb) - Number(ya);
+                    return (semOrder[sb] || 0) - (semOrder[sa] || 0);
+                });
 
-                container.innerHTML = semesters.map((semester, idx) => {
+                document.getElementById("seminar-list").innerHTML = semesters.map((key, idx) => {
+                    const [year, semester] = key.split("|");
                     const id = `semester${idx}`;
-                    const talks = grouped[semester].map((s, i) => {
+                    const talks = grouped[key].map((s, i) => {
                         const speakerId = `${id}_speaker${i}`;
                         const name = s.Website && s.Website.startsWith("http")
                             ? `<a class="speakerpage" href="${s.Website}" target="_blank">${s.Speaker}</a>`
@@ -76,7 +136,7 @@
                                     <h4>${name}${s.Institution ? ` (${s.Institution})` : ""}</h4>
                                     <br>${s.Title || ""}
                                 </div>
-                                <input id="${speakerId}" type="checkbox" checked>
+                                <input id="${speakerId}" type="checkbox">
                                 <label class="abstract-toggle" for="${speakerId}"></label>
                                 <div class="abstract"><p>${s.Abstract || ""}</p></div>
                             </div>
@@ -84,9 +144,9 @@
                     }).join("");
 
                     return `
-                        <input id="${id}" type="checkbox" ${idx === 1 ? "checked" : ""}>
-                        <h3><label class="semester" for="${id}">${semester}</label></h3>
-                        <div>${talks}</div>
+                        <input id="${id}" type="checkbox" ${idx === 0 ? "checked" : ""}>
+                        <h3><label class="semester" for="${id}">${semester} ${year}</label></h3>
+                        <div class="semester-body">${talks}</div>
                     `;
                 }).join("");
             }
