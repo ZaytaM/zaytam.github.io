@@ -216,6 +216,16 @@
                     return (semOrder[sb] || 0) - (semOrder[sa] || 0);
                 });
 
+                // Identify the current calendar semester to set as the default open section
+                const now = new Date();
+                const month = now.getMonth();
+                let curSem = "Fall";
+                if (month <= 4) curSem = "Spring";
+                else if (month <= 6) curSem = "Summer";
+                
+                const currentSemesterKey = `${now.getFullYear()}|${curSem}`;
+                const openKey = semesters.includes(currentSemesterKey) ? currentSemesterKey : semesters[0];
+
                 document.getElementById("seminar-list").innerHTML = semesters.map((key, idx) => {
                     const [year, semester] = key.split("|");
                     const id = `semester${idx}`;
@@ -244,7 +254,7 @@
                         }).join("");
 
                     return `
-                        <input id="${id}" type="checkbox" ${idx === 0 ? "checked" : ""}>
+                        <input id="${id}" type="checkbox" ${key === openKey ? "checked" : ""}>
                         <h3><label class="semester" for="${id}">${escapeHTML(semester)} ${escapeHTML(year)}</label></h3>
                         <div class="semester-body">${talks}</div>
                     `;
