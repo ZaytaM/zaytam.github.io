@@ -221,7 +221,6 @@
                 const month = now.getMonth();
                 let curSem = "Fall";
                 if (month <= 4) curSem = "Spring";
-                else if (month <= 6) curSem = "Summer";
                 
                 const currentSemesterKey = `${now.getFullYear()}|${curSem}`;
                 const openKey = semesters.includes(currentSemesterKey) ? currentSemesterKey : semesters[0];
