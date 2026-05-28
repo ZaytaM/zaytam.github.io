@@ -10,163 +10,143 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
 </head>
 
-
 <body>
 <section>
 
-<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="#short_bio">Short Bio</a></li>
-				  <li><a href="#publications">Publications</a></li>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#short_bio">Short Bio</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#slides">Slides</a></li>
           <li><a href="#videos">Videos</a></li>
           <li><a href="#outreach">Outreach</a></li>
-				  <li><a href="CV.pdf">CV</a></li>
+          <li><a href="CV.pdf">CV</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teaching <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="functional.html">Functional Analysis</a></li>
               <li><a href="M408C.html">Calc 1 Spring 2025</a></li>
               <li><a href="ML.html">Math for ML Fall 2025</a></li>
-			</ul>
-		</div>
-	  </div>
-	</nav>
-
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <img class="img-responsive" src="Yo_grande.jpg" alt=""><br>
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Matias Gonzalo Delgadino</b></div><br>
-                <p><b><a href="", style="color:inherit">Assistant Professor</a></b><br>
-                <p>Mathematics Department<br>
-                University of Texas at Austin<br>
-		matias.delgadino at math.utexas.edu
-		</p>
-                <dd><a href="https://scholar.google.com/citations?user=9HC8HaQAAAAJ&hl=en">Google Scholar</a></dd>
-                <dd><a href="https://github.com/zaytam">GitHub</a></dd>
-                <dd><a href="http://arxiv.org/a/delgadino_m_1">Arxiv</a></dd>
-            </div>
-
-            <!-- Entries Column ; padding-left:2%; padding-right:2% -->
-            <div class="col-md-8" >
-                <div class="mx-4 mx-md-0"; style="margin-top:2% ; text-align:justify;">
-                <h2 id="short_bio">Short Bio</h2>
-
-					<p> I have always wanted to understand the world around me, and the tool I have chosen is applied mathematics.</p>
-          <p> I did my undergraduate studies at the <a href="https://www.famaf.unc.edu.ar/">Universidad Nacional de Córdoba</a> (Argentina), and then went to the <a href="https://amsc.umd.edu/">University
-            of Maryland </a> (United States) to do my Ph.D. in Applied Mathematics under the supervision of <a href="https://www.math.umd.edu/~mellet/">Antoine Mellet</a>.
-          </p>
-          <p>
-            After my Ph.D., I held postdoctoral positions at UNESCO's <a href="https://www.ictp.it/">ICTP</a> (Italy)
-             under the supervision of <a href="https://web.ma.utexas.edu/users/maggi/">Francesco Maggi</a> and <a href="https://www.imperial.ac.uk/ammp">Imperial College</a> (United Kingdom) under the supervision of
-              <a href="http://wwwf.imperial.ac.uk/~pavl/">Greg Pavliotis</a> and <a href="http://people.maths.ox.ac.uk/carrillo/">Jose Carrillo</a>.
-					</p>
-          <p>
-            My research interests are mostly related to mathematical modelling through Partial Differential Equations (PDEs). For the most part, my work is devoted to
-            understanding <a href="https://en.wikipedia.org/wiki/Self-organization">self-organization</a> phenomena in systems with a large number of particles/agents. Using this perspective,
-            I am currently trying to understand the dynamics of parameter training in commonly used machine learning algorithms.
-          </p>
-          <p>
-		Currently, my research is being funded by NSF DMS 2205937 and NSF RTG 1840314. In the past, my research was funded by <a href="http://plsql1.cnpq.br/divulg/RESULTADO_PQ_102003.buscapelonome2000?f_nome=matias+gonzalo+delgadino&v_sele_modal=BOL_CURSO"> CNPq</a> and <a href="https://serrapilheira.org/pesquisadores/matias-delgadino/">Instituto Serrapilheira</a>.
-          </p>
-                </div>
-          </div>
-
-
-          <!-- Videos -->
-          <div class="col-md-8">
-              <h2 id="videos">Videos</h2>
-              <ul>
-		            <li> <a href= "https://www.youtube.com/watch?v=aPyA65XvWro">GAN: Dynamicsa</a> for <a href ="https://arxiv.org/abs/2405.18673">Wassertein GAN </a></li>
-                <li> <a href= "https://www.youtube.com/watch?v=jFOos-t-KS4">Oscillatory behavior</a> for <a href ="https://arxiv.org/abs/1701.07875">Wassertein GAN </a></li>
-                <li> <a href= "https://www.youtube.com/watch?v=R1YOIVVwq_Q&feature=emb_title">Interview</a> for TV PUC-Rio </li>
-                <li> <a href= "https://vimeo.com/318968127">Mixing and Enhanced dissipation</a> Analysis seminar at University of Bath (2019)</li>
-                <li><a href="https://www.youtube.com/watch?v=4C4pGLdQuLE">Mean ﬁeld limit by Gamma convergence</a> part of the <a href="https://www.him.uni-bonn.de/programs/past-programs/past-junior-trimester-programs/kinetic-theory-2019/description/", style='color:inherit'> Junior trimester program in Kinetic theory </a> at the Haussdorf Center (2019)</li>
-              </ul>
-              <!-- Outreach -->
-              <h2 id="outreach">Outreach</h2>
-              <ul>
-		                <li>Main Organizer of <a href= "https://analysispde.ma.utexas.edu/winter-program-in-ml-2024/">NSF RTG: Winter Program in Machine Learning 2024</a></li>
-                    <li>Main Organizer of <a href= "http://indico.ictp.it/event/8691/">ICTP 1st Latin American School in Applied Mathematics</a>: <q>Yo soy <a href="https://www.youtube.com/watch?v=GpmSgL35Lcw">eLLAMA</a> </q> </li>
-                <li> <a href= "https://fdch.github.io/specexp/">Hearing the Self: a Spectral Experience</a>. An interactive, audio/visual installation simulates the process by which the human brain perceives the world. Xuhui Art Museum, Shanghai (<a href="http://www.computermusic.org/page/23/", style='color:inherit'>ICMC</a>-2017) </a></li>
-              </ul>
-              <!-- Slides -->
-              <h2 id="slides"> Slides</h2>
-                <ul>
-		<li><a href="VAPS_seminar.pdf">GAN: Dynamics</a> at <a href="https://www.ndguillen.com/AlgorithmsAndPDE_TXST_UT/index.html", style="color:inherit"> Algorithms and Analysis </a> UT & TXST and <a href="https://sites.google.com/view/vapseminar/home?authuser=0", style="color:inherit"> VAPS seminar</a> (2024)</li>
-                  <li><a href="Talk_Georgia_Tech.pdf">On the relationship between the thin film equation and Tanner's law</a> at <a href="https://math.gatech.edu/seminars-colloquia/series/pde-seminar/matias-delgadino-20190122", style="color:inherit"> PDE Seminar</a> Georgia Tech (2019) and <a href="http://www2.im.ufrj.br/summerpde/speakers/", style="color:inherit"> Rio Summer PDE</a> (2020)</li>
-                  <li><a href="Mixing_and_Enhanced_Dissipation.pdf">Mixing and Enhanced Dissipation</a> at <a href="https://impa.br/eventos-do-impa/eventos-2019/32o-coloquio-brasileiro-de-matematica/sessoes-tematicas/equacoes-diferenciais-parciais/", style="color:inherit"> Colloquio Brasilero de Matematica </a> IMPA (2019) and <a href="https://www.imperial.ac.uk/events/97976/diffusion-and-mixing-in-incompressible-flows-dr-matias-delgadino-imperial-college-london/", style="color:inherit">Fluid Mechanics Seminar</a> Imperial College (2018)</li>
-                  <li><a href="Alexandrov_Revisited.pdf">Alexandrov’s Theorem revisited</a> at <a href="http://www.sussex.ac.uk/maths/research/cov-conference", style="color:inherit"> CoV and GMT</a> University of Sussex (2018) and <a href="https://lekili.duckdns.org/seminars/geometry.php", style="color:inherit"> KCL/UCL Geometry Seminar</a> King's College London (2018)</li>
-                </ul>
-              <!-- Publications -->
-              <h2 id="publications">Publications</h2>
-
-              <strong>Accepted Papers</strong><br/>
-              <ol>
-		
-              <li class="paper"><a href="https://arxiv.org/pdf/1908.09782">Uniqueness and non-uniqueness of steady states of aggregation-diffusion equation</a> with  <a href="https://math.okstate.edu/people/faculty", style="color:inherit">X. Yan</a> and <a href="http://people.math.gatech.edu/~yyao9/", style="color:inherit">Y. Yao</a>, <a href="http://dx.doi.org/10.1002/cpa.21950", style="color:inherit"> Communications of Pure and Applied Mathematics (2020)</a></li>
-              <li class="paper"><a href="https://arxiv.org/abs/1906.04601">A λ-convexity based proof for the propagation of chaos for weakly interacting stochastic particles</a> with  <a href="http://people.maths.ox.ac.uk/carrillo/", style="color:inherit">J. Carrillo</a>  and <a href="http://wwwf.imperial.ac.uk/~pavl/", style="color:inherit">G. Pavliotis</a>, <a href="https://doi.org/10.1016/j.jfa.2020.108734", style="color:inherit">Journal of Functional Analysis</a> (2020)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1901.09611">On the relationship between the thin film equation and Tanner's law</a> with  <a href="https://www.math.umd.edu/~mellet/", style="color:inherit">A. Mellet</a>, <a href="http://dx.doi.org/10.1002/cpa.21946", style="color:inherit"> Communications of Pure and Applied Mathematics (2020)</a></li>
-              <li class="paper"><a href="https://arxiv.org/pdf/1803.06232">Reverse Hardy-Littlewood-Sobolev inequalities</a> with <a href="http://people.maths.ox.ac.uk/carrillo/", style="color:inherit">J. Carrillo</a>, <a href="https://www.ceremade.dauphine.fr/~dolbeaul/", style="color:inherit">J. Dolbeault</a>, <a href="http://www.math.caltech.edu/~rlfrank/", style="color:inherit">R. Frank</a> and
-                <a href="https://francahoffmann.wordpress.com/", style="color:inherit"> F. Hoffmann</a>, <a href="https://doi.org/10.1016/j.matpur.2019.09.001", style="color:inherit"> Journal de Mathématiques Pures et Appliquées</a> (2019)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1806.03258">On the relation betweenenhanced dissipation time-scales and mixing rates</a> with
-                  <a href="http://wwwf.imperial.ac.uk/~mcotizel/", style="color:inherit">M. Coti Zelati</a>  and <a href="http://www.math.ucsd.edu/~telgindi/", style="color:inherit">T. Elgindi</a>, <a href="https://doi.org/10.1002/cpa.21831", style="color:inherit">Communications of Pure and Applied Mathematics</a> (2019)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1803.01915">Existence of ground states for aggregation-diffusion equations</a> with  <a href="http://people.maths.ox.ac.uk/carrillo/", style="color:inherit">J. Carrillo</a>  and <a href="https://fpatacchini.wordpress.com//", style="color:inherit">F. Patacchini</a>, <a href="https://doi.org/10.1142/S0219530518500276", style="color:inherit">Analysis and Applications</a> (2019)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1711.07690">Alexandrov Theorem revisited</a> with <a href="https://web.ma.utexas.edu/users/maggi/", style="color:inherit">F. Maggi</a>, <a href="https://doi.org/10.2140/apde.2019.12.1613", style="color:inherit">Analysis & PDE</a> (2019)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1705.10117">Bubbling with L2-almost constant mean curvature and an Alexandrov-type theorem for crystals</a> with  <a href="https://web.ma.utexas.edu/users/maggi/", style="color:inherit">F. Maggi</a>,
-                 <a href="http://www.math.uchicago.edu/~cmihaila/", style="color:inherit">C. Mihaila</a> and <a href="https://math.northwestern.edu/~neumayer/", style="color:inherit">R. Neumayer</a>, <a href="https://doi.org/10.1007/s00205-018-1267-8", style="color:inherit">Archive for Rational Mechanics and Analysis</a> (2018)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1609.02691">Hölder estimates for fractional parabolic equations with critical divergence free drifts</a> with  <a href="https://scholar.google.com/citations?user=t38qqj0AAAAJ&hl=en", style="color:inherit">S. Smith</a>, <a href="https://doi.org/10.1016/j.anihpc.2017.06.004", style="color:inherit">Annales de l'Institut Henri Poincaré C, Analyse non linéaire</a> (2018)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1510.05021">Convergence of the one-dimensional Cahn-Hilliard equation with degenerate mobility</a>, <a href="https://doi.org/10.1137/15M1045429", style="color:inherit">SIAM Journal on Mathematical Analysis</a> (2018)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/1406.4040">Regularity of local minimizers ofthe interaction energy via obstacle problems</a> with  <a href="http://people.maths.ox.ac.uk/carrillo/", style="color:inherit">J. Carrillo</a>  and <a href="https://www.math.umd.edu/~mellet/", style="color:inherit">A. Mellet</a>, <a href="https://doi.org/10.1007/s00220-016-2598-7", style="color:inherit">Communications in Mathematical Physics </a> (2016)</li>
-              </ol>
-
-              <strong>Preprints</strong><br/>
-              <ol>
-              <li class="paper"><a href="https://arxiv.org/abs/2007.08591">The Landau equation as a Gradient Flow</a> with  <a href="http://people.maths.ox.ac.uk/carrillo/", style="color:inherit">J. Carrillo</a>, <a href="http://laurent.desvillettes.free.fr/", style="color:inherit">L. Desvillettes</a> and <a href="", style="color:inherit">J. Wu</a>, (2020)</li>
-              <li class="paper"><a href="https://arxiv.org/abs/2001.03920">On the diffusive-mean field limit for weakly interacting diffusions exhibiting phase transitions</a> with  <a href="http://wwwf.imperial.ac.uk/~pavl/", style="color:inherit">G. Pavliotis</a> and <a href="http://wwwf.imperial.ac.uk/~rg1314/", style="color:inherit">R. Gvalani</a>, (2020)</li>
-              </ol>
-
-
-
-
-              <!-- <h2 id="teaching">Teaching</h2> -->
-
-
-
-          </div>
-
-
-
-            <!-- Publications -->
-
-
-
-        </div>
-
-
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <img class="img-responsive" src="Yo_grande.jpg" alt=""><br>
+        <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Matias Gonzalo Delgadino</b></div><br>
+        <p><b><a href="" style="color:inherit">Assistant Professor</a></b><br>
+        Department of Mathematics<br>
+        The University of Texas at Austin<br>
+        <a href="mailto:matias.delgadino@math.utexas.edu">matias.delgadino at math.utexas.edu</a>
+        </p>
+        <dd><a href="https://scholar.google.com/citations?user=9HC8HaQAAAAJ&hl=en">Google Scholar</a></dd>
+        <dd><a href="https://github.com/zaytam">GitHub</a></dd>
+        <dd><a href="http://arxiv.org/a/delgadino_m_1">Arxiv</a></dd>
+      </div>
+
+      <div class="col-md-8">
+        <div class="mx-4 mx-md-0" style="margin-top:2%; text-align:justify;">
+          <h2 id="short_bio">Short Bio</h2>
+          <p>I have always wanted to understand the world around me, and the tool I have chosen is applied mathematics.</p>
+          <p>I did my undergraduate studies at the <a href="https://www.famaf.unc.edu.ar/">Universidad Nacional de Córdoba</a> (Argentina), and then went to the University of Maryland, College Park (United States) to do my Ph.D. in Mathematics under the supervision of <a href="https://www.math.umd.edu/~mellet/">Antoine Mellet</a>.</p>
+          <p>After my Ph.D., I held postdoctoral positions at UNESCO's <a href="https://www.ictp.it/">ICTP</a> (Italy) under the supervision of <a href="https://web.ma.utexas.edu/users/maggi/">Francesco Maggi</a>, Imperial College London (United Kingdom) under the supervision of Greg Pavliotis and Jose Carrillo, and was a Hooke Research Fellow at the University of Oxford. I also served as an Assistant Professor at PUC-Rio, Brazil.</p>
+          <p>My research interests are mostly related to mathematical modelling through Partial Differential Equations (PDEs). For the most part, my work is devoted to understanding <a href="https://en.wikipedia.org/wiki/Self-organization">self-organization</a> phenomena in systems with a large number of particles/agents. Using this perspective, I am currently trying to understand the dynamics of parameter training in commonly used machine learning algorithms.</p>
+          <p>Currently, my research is being funded by the NSF.</p>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h2 id="videos">Videos</h2>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=rzFHvHH9JvE">Phase transitions, logarithmic Sobolev inequalities</a></li>
+          <li><a href="https://www.youtube.com/watch?v=aPyA65XvWro">GAN: Dynamics</a></li>
+          <li><a href="https://www.youtube.com/watch?v=R1YOIVVwq_Q&feature=emb_title">Interview</a> for TV PUC-Rio</li>
+          <li><a href="https://vimeo.com/318968127">Mixing and Enhanced dissipation</a></li>
+          <li><a href="https://www.youtube.com/watch?v=4C4pGLdQuLE">Mean field limit by Gamma convergence</a></li>
+        </ul>
+
+        <h2 id="outreach">Outreach & Organization</h2>
+        <ul>
+          <li>Main Organizer of <a href="https://analysispde.ma.utexas.edu/winter-program-in-ml-2024/">NSF RTG: Winter Program in Machine Learning 2024</a>, UT Austin</li>
+          <li>Main Organizer of <a href="http://indico.ictp.it/event/8691/">UNESCO/ICTP 1st Latin American School in Applied Mathematics</a> (Quito, Ecuador): <q>Yo soy <a href="https://www.youtube.com/watch?v=GpmSgL35Lcw">eLLAMA</a></q></li>
+          <li><a href="https://fdch.github.io/specexp/">Hearing the Self: a Spectral Experience</a>. An interactive, audio/visual installation simulating the process by which the human brain perceives the world. Xuhui Art Museum, Shanghai (ICMC-2017)</li>
+        </ul>
+
+        <h2 id="slides">Slides</h2>
+        <ul>
+          <li><a href="VAPS_seminar.pdf">GAN: Dynamics</a> at Algorithms and Analysis UT & TXST and VAPS seminar (2024)</li>
+          <li><a href="Talk_Georgia_Tech.pdf">On the relationship between the thin film equation and Tanner's law</a> at PDE Seminar Georgia Tech (2019) and Rio Summer PDE (2020)</li>
+          <li><a href="Mixing_and_Enhanced_Dissipation.pdf">Mixing and Enhanced Dissipation</a> at Colloquio Brasilero de Matematica IMPA (2019) and Fluid Mechanics Seminar Imperial College (2018)</li>
+          <li><a href="Alexandrov_Revisited.pdf">Alexandrov’s Theorem revisited</a> at CoV and GMT University of Sussex (2018) and KCL/UCL Geometry Seminar King's College London (2018)</li>
+        </ul>
+
+        <h2 id="publications">Publications</h2>
+
+        <strong>Preprints and Work Under Review</strong><br/>
+        <ol reversed>
+          <li class="paper"><a href="https://arxiv.org/abs/2605.24232">Stability of optimal transport maps and second variation of the 2-Monge-Kantorovich distance</a> with F.U. Caja-Lopez and J. Kitagawa, 2026. </li>
+          <li class="paper"><a href="https://arxiv.org/abs/2601.19630">Mass generation for the two-dimensional O(N) linear sigma model in the large N limit</a> with S.A. Smith, 2026. </li>
+          <li class="paper"><a href="https://arxiv.org/abs/2605.06538">Diffusion-based posterior sampling: a Feynman--Kac analysis of bias and stability</a> with S. Motsch, A. Parulekar, W. Porteous, and S. Shakkottai, 2026. </li>
+          <li class="paper"><a href="https://arxiv.org/abs/2509.16156">Quantitative stability of the Rossby--Haurwitz waves of degree two for the Euler equation on S²</a> with L. Melzi, 2025. </li>
+          <li class="paper"><a href="https://arxiv.org/abs/2506.22083">Sharp mean-field estimates for the repulsive log gas in any dimension</a> with R.S. Gvalani, 2025. </li>
+          <li class="paper"><a href="https://arxiv.org/abs/2504.13802">Contractivity of Wasserstein distance and exponential decay for the Landau equation with Maxwellian molecules</a> with F.U. Caja-Lopez, M.P. Gualdani, and M. Taskovic, 2025.</li>
+        </ol>
+
+        <strong>Published and Accepted Papers</strong><br/>
+        <ol reversed>
+          <li class="paper"><a href="https://arxiv.org/abs/2405.14738">Entropy maximization in the two-dimensional Euler equations</a> with M. Coti Zelati, <i>Analysis & PDE</i>, 2026.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2310.13221">Continuous symmetrizations and uniqueness of solutions to nonlocal equations</a> with M. Vaughan, <i>Analysis & PDE</i>, 2025.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2405.18673">Generative adversarial networks: dynamics</a> with B.B. Suassuna and R. Cabrera, <i>Journal of Machine Learning Research</i> 26(181), 1--30, 2025.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2007.08591">The Landau equation as a gradient flow</a> with J.A. Carrillo, L. Desvillettes, and J.S.H. Wu, <i>Analysis & PDE</i> 17(4), 1331--1375, 2024.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2210.16376">A Heintze--Karcher inequality with free boundaries and applications to capillarity theory</a> with D. Weser, <i>Journal of Functional Analysis</i> 287(9), 110584, 2024.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2112.06304">Phase transitions, logarithmic Sobolev inequalities, and uniform-in-time propagation of chaos for weakly interacting diffusions</a> with R.S. Gvalani, G.A. Pavliotis, and S.A. Smith, <i>Communications in Mathematical Physics</i> 401(1), 275--323, 2023.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2211.07015">Convergence of a particle method for a regularized spatially homogeneous Landau equation</a> with J.A. Carrillo and J.S.H. Wu, <i>Mathematical Models and Methods in Applied Sciences</i> 33(5), 971--1008, 2023.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2107.07252">Boltzmann to Landau from the gradient flow perspective</a> with J.A. Carrillo and J.S.H. Wu, <i>Nonlinear Analysis</i> 219, 112824, 2022.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2012.08586">Fast diffusion leads to partial mass concentration in Keller--Segel type stationary solutions</a> with J.A. Carrillo, R.L. Frank, and M. Lewin, <i>Mathematical Models and Methods in Applied Sciences</i> 32(4), 831--850, 2022.</li>
+          <li class="paper"><a href="https://arxiv.org/pdf/1908.09782">Uniqueness and nonuniqueness of steady states of aggregation-diffusion equations</a> with X. Yan and Y. Yao, <i>Communications on Pure and Applied Mathematics</i> 75(1), 3--59, 2022.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/2001.03920">On the diffusive-mean field limit for weakly interacting diffusions exhibiting phase transitions</a> with R.S. Gvalani and G.A. Pavliotis, <i>Archive for Rational Mechanics and Analysis</i> 241(1), 91--148, 2021.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1901.09611">On the relationship between the thin film equation and Tanner's law</a> with A. Mellet, <i>Communications on Pure and Applied Mathematics</i> 74(3), 507--543, 2021.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1906.04601">A λ-convexity based proof for the propagation of chaos for weakly interacting stochastic particles</a> with J.A. Carrillo and G.A. Pavliotis, <i>Journal of Functional Analysis</i> 279(10), 108734, 2020.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1806.03258">On the relation between enhanced dissipation time-scales and mixing rates</a> with M. Coti Zelati and T.M. Elgindi, <i>Communications on Pure and Applied Mathematics</i> 73(6), 1205--1244, 2020.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1807.09189">Reverse Hardy--Littlewood--Sobolev inequalities</a> with J.A. Carrillo, J. Dolbeault, R.L. Frank, and F. Hoffmann, <i>Journal de Mathématiques Pures et Appliquées</i> 132, 133--165, 2019.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1803.01915">Existence of ground states for aggregation-diffusion equations</a> with J.A. Carrillo and F.S. Patacchini, <i>Analysis and Applications</i> 17(3), 393--423, 2019.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1711.07690">Alexandrov's theorem revisited</a> with F. Maggi, <i>Analysis & PDE</i> 12(6), 1613--1642, 2019.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1510.05021">Convergence of a one-dimensional Cahn--Hilliard equation with degenerate mobility</a>, <i>SIAM Journal on Mathematical Analysis</i> 50(4), 4457--4482, 2018.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1609.02691">Hölder estimates for fractional parabolic equations with critical divergence free drifts</a> with S.A. Smith, <i>Annales de l'Institut Henri Poincaré C</i> 35(3), 577--604, 2018.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1705.10117">Bubbling with L²-almost constant mean curvature and an Alexandrov-type theorem for crystals</a> with F. Maggi, C. Mihaila, and R. Neumayer, <i>Archive for Rational Mechanics and Analysis</i> 230(3), 1131--1177, 2018.</li>
+          <li class="paper"><a href="https://arxiv.org/abs/1406.4040">Regularity of local minimizers of the interaction energy via obstacle problems</a> with J.A. Carrillo and A. Mellet, <i>Communications in Mathematical Physics</i> 343(3), 747--781, 2016.</li>
+        </ol>
+
+        <strong>Interdisciplinary Work</strong><br/>
+        <ul>
+          <li class="paper"><a href="https://www.biorxiv.org/content/10.1101/2023.11.02.565332v1">Disturbance-generated competitive coexistence</a> with U.A. Trigos-Raczkowski, R. Lyons, A.S. Ackleh, and A. Ostling. Preprint, 2023 (Theoretical ecology / population dynamics).</li>
+          <li class="paper"><a href="https://repository.gatech.edu/bitstreams/98395792-aa54-49e8-9ba4-f0d34d2aba17/download">DreamSound: deep activation layer sonification</a> with F.N. Cámara Halac. <i>Proceedings of ICMC 2021</i> (Computer music / deep-learning sonification).</li>
+          <li class="paper"><a href="https://fdch.github.io/specexp/">Hearing the Self: A Spectral Experience</a> with L.D. Simonelli and F.N. Cámara Halac. <i>Proceedings of ICMC 2017</i> (Computer music / spectral sound performance).</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
 </section>
 
-</body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 </html>

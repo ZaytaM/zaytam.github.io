@@ -1,0 +1,355 @@
+% =====================================================================
+%  Curriculum Vitae -- Matias G. Delgadino
+%  Department of Mathematics, The University of Texas at Austin
+% =====================================================================
+
+\documentclass[11pt]{article}
+
+% --- Page geometry and typography ---
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{eurosym}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue!60!black,citecolor=blue!60!black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\scshape\raggedright}
+  {}{0pt}{}
+  [{\vspace{0.2ex}\hrule height 0.4pt}]
+\titlespacing*{\section}{0pt}{2.2ex plus .3ex}{0.6ex}
+
+% --- Running header on every page, "p. X / Y" footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Mat\'ias G. Delgadino~---~Curriculum Vitae}
+\fancyfoot[C]{\small\thepage\;/\;\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Custom entry command: date column + description column ---
+\newcommand{\entry}[2]{%
+  \par\addvspace{0.6ex}\noindent
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.5in}%
+    \setlength{\labelwidth}{1.4in}%
+    \setlength{\labelsep}{0.1in}%
+  }%
+  \item[\textsf{\small #1}] #2
+  \end{list}
+}
+
+% --- Publication entry: numbered with hangindent ---
+\newcommand{\pub}[2]{%
+  \par\addvspace{0.5ex}\noindent
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.4em}%
+    \setlength{\labelwidth}{2.4em}%
+    \setlength{\labelsep}{0.3em}%
+  }%
+  \item[{[#1]}] #2
+  \end{list}
+}
+
+% --- Talk-group header: bold-italic topic title with leading marker ---
+\newcommand{\talkgroup}[1]{%
+  \par\addvspace{1.6ex}%
+  \noindent\rule[0.4ex]{0.9em}{0.6pt}\enspace\textbf{\itshape #1}%
+  \par\nopagebreak\addvspace{0.4ex}%
+}
+
+% --- Helper: arXiv link ---
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{\texttt{arXiv:#1}}}
+
+% --- Header block ---
+\newcommand{\cvheader}{%
+  \begin{center}
+    {\LARGE\textbf{Mat\'ias G. Delgadino}}\\[0.6em]
+    {\small Department of Mathematics, The University of Texas at Austin}\\[0.2em]
+    {\small \href{mailto:matias.delgadino@math.utexas.edu}{\texttt{matias.delgadino@math.utexas.edu}}}\\[0.3em]
+    {\footnotesize\itshape Last updated: \today}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\begin{document}
+\cvheader
+
+% =====================================================================
+\section{Education}
+% =====================================================================
+
+\entry{2011--2016}{Ph.D.\ in Mathematics, University of Maryland, College Park, USA.\\
+\emph{Thesis:} Analysis of Self-Organization. \quad \emph{Advisor:} Antoine Mellet.}
+
+\entry{2006--2011}{Licenciado en Matem\'atica, Universidad Nacional de C\'ordoba, Argentina.\\
+\emph{Thesis:} Teor\'ia de Control aplicada a tratamientos de quimioterapia \\
+ \emph{Advisor:} Andres Barrea.}
+
+% =====================================================================
+\section{Academic Positions}
+% =====================================================================
+
+\entry{2021--Present}{Assistant Professor, Department of Mathematics, The University of Texas at Austin.}
+
+\entry{2020--2021}{Hooke Research Fellow (on leave from PUC-Rio), University of Oxford, United Kingdom.}
+
+\entry{2019--2021}{Assistant Professor, PUC-Rio, Brazil.}
+
+\entry{2017--2019}{Postdoctoral Researcher, Imperial College London, United Kingdom.}
+
+\entry{2016--2017}{Postdoctoral Researcher, ICTP, Trieste, Italy.}
+
+% =====================================================================
+\section{Publications}
+% =====================================================================
+
+\textit{Numbered in reverse chronological order. Preprints are listed first. \textbf{M.G.~Delgadino} denotes the candidate; \textsuperscript{*} indicates mentored student or postdoc.}\\[0.5em]
+
+\noindent\textbf{Preprints and Work Under Review}\\[0.3em]
+
+\pub{27}{F.U.~Caja-Lopez\textsuperscript{*}, \textbf{M.G.~Delgadino}, J. Kitagawa. Stability of optimal transport maps and second variation of the 2-Monge-Kantorovich distance. Preprint, 2026. \arxiv{2605.24232}. \emph{Under review at ASENS.}}
+
+\pub{26}{\textbf{M.G.~Delgadino}, S.A.~Smith. Mass generation for the two-dimensional $O(N)$ linear sigma model in the large $N$ limit. Preprint, 2026. \arxiv{2601.19630}. \emph{Under review at Communications on Pure and Applied Mathematics.}}
+
+\pub{25}{\textbf{M.G.~Delgadino}, S.~Motsch, A.~Parulekar, W.~Porteous\textsuperscript{*}, S.~Shakkottai. Diffusion-based posterior sampling: a Feynman--Kac analysis of bias and stability. Preprint, 2026. \arxiv{2605.06538}. \emph{Under review at NeurIPS.}}
+
+\pub{24}{\textbf{M.G.~Delgadino}, L.~Melzi\textsuperscript{*}. Quantitative stability of the Rossby--Haurwitz waves of degree two for the Euler equation on $\mathbb{S}^2$. Preprint, 2025. \arxiv{2509.16156}. \emph{Under review at SIAM Journal on Mathematical Analysis.}}
+
+\pub{23}{\textbf{M.G.~Delgadino}, R.S.~Gvalani. Sharp mean-field estimates for the repulsive log gas in any dimension. Preprint, 2025. \arxiv{2506.22083}. \emph{Under review at Annals of Probability.}}
+
+\pub{22}{F.U.~Caja-Lopez\textsuperscript{*}, \textbf{M.G.~Delgadino}, M.P.~Gualdani, M.~Taskovic. Contractivity of Wasserstein distance and exponential decay for the Landau equation with Maxwellian molecules. Preprint, 2025. \arxiv{2504.13802}. \emph{Under review at Analysis \& PDE.}}
+
+\vspace{0.8em}\noindent\textbf{Published and Accepted}\\[0.3em]
+
+\pub{21}{M.~Coti Zelati, \textbf{M.G.~Delgadino}. Entropy maximization in the two-dimensional Euler equations. \emph{Analysis \& PDE}, 2026. \arxiv{2405.14738}.}
+
+\pub{20}{\textbf{M.G.~Delgadino}, M.~Vaughan\textsuperscript{*}. Continuous symmetrizations and uniqueness of solutions to nonlocal equations. \emph{Analysis \& PDE}, 2025. \arxiv{2310.13221}.}
+
+\pub{19}{\textbf{M.G.~Delgadino}, B.B.~Suassuna\textsuperscript{*}, R.~Cabrera\textsuperscript{*}. Generative adversarial networks: dynamics. \emph{Journal of Machine Learning Research} \textbf{26}(181), 1--30, 2025. \arxiv{2405.18673}.}
+
+\pub{18}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, L.~Desvillettes, J.S.H.~Wu\textsuperscript{*}. The Landau equation as a gradient flow. \emph{Analysis \& PDE} \textbf{17}(4), 1331--1375, 2024. \arxiv{2007.08591}.}
+
+\pub{17}{\textbf{M.G.~Delgadino}, D.~Weser\textsuperscript{*}. A Heintze--Karcher inequality with free boundaries and applications to capillarity theory. \emph{Journal of Functional Analysis} \textbf{287}(9), 110584, 2024. \arxiv{2210.16376}.}
+
+\pub{16}{\textbf{M.G.~Delgadino}, R.S.~Gvalani, G.A.~Pavliotis, S.A.~Smith. Phase transitions, logarithmic Sobolev inequalities, and uniform-in-time propagation of chaos for weakly interacting diffusions. \emph{Communications in Mathematical Physics} \textbf{401}(1), 275--323, 2023. \arxiv{2112.06304}.}
+
+\pub{15}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, J.S.H.~Wu\textsuperscript{*}. Convergence of a particle method for a regularized spatially homogeneous Landau equation. \emph{Mathematical Models and Methods in Applied Sciences} \textbf{33}(5), 971--1008, 2023. \arxiv{2211.07015}.}
+
+\pub{14}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, J.S.H.~Wu\textsuperscript{*}. Boltzmann to Landau from the gradient flow perspective. \emph{Nonlinear Analysis} \textbf{219}, 112824, 2022. \arxiv{2107.07252}.}
+
+\pub{13}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, R.L.~Frank, M.~Lewin. Fast diffusion leads to partial mass concentration in Keller--Segel type stationary solutions. \emph{Mathematical Models and Methods in Applied Sciences} \textbf{32}(4), 831--850, 2022. \arxiv{2012.08586}.}
+
+\pub{12}{\textbf{M.G.~Delgadino}, X.~Yan, Y.~Yao. Uniqueness and nonuniqueness of steady states of aggregation-diffusion equations. \emph{Communications on Pure and Applied Mathematics} \textbf{75}(1), 3--59, 2022. \arxiv{1908.09782}.}
+
+\pub{11}{\textbf{M.G.~Delgadino}, R.S.~Gvalani, G.A.~Pavliotis. On the diffusive-mean field limit for weakly interacting diffusions exhibiting phase transitions. \emph{Archive for Rational Mechanics and Analysis} \textbf{241}(1), 91--148, 2021. \arxiv{2001.03920}.}
+
+\pub{10}{\textbf{M.G.~Delgadino}, A.~Mellet. On the relationship between the thin film equation and Tanner's law. \emph{Communications on Pure and Applied Mathematics} \textbf{74}(3), 507--543, 2021. \arxiv{1901.09611}.}
+
+\pub{9}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, G.A.~Pavliotis. A $\lambda$-convexity based proof for the propagation of chaos for weakly interacting stochastic particles. \emph{Journal of Functional Analysis} \textbf{279}(10), 108734, 2020. \arxiv{1906.04601}.}
+
+\pub{8}{M.~Coti Zelati, \textbf{M.G.~Delgadino}, T.M.~Elgindi. On the relation between enhanced dissipation time-scales and mixing rates. \emph{Communications on Pure and Applied Mathematics} \textbf{73}(6), 1205--1244, 2020. \arxiv{1806.03258}.}
+
+\pub{7}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, J.~Dolbeault, R.L.~Frank, F.~Hoffmann. Reverse Hardy--Littlewood--Sobolev inequalities. \emph{Journal de Math\'ematiques Pures et Appliqu\'ees} \textbf{132}, 133--165, 2019. \arxiv{1807.09189}.}
+
+\pub{6}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, F.S.~Patacchini. Existence of ground states for aggregation-diffusion equations. \emph{Analysis and Applications} \textbf{17}(3), 393--423, 2019. \arxiv{1803.01915}.}
+
+\pub{5}{\textbf{M.G.~Delgadino}, F.~Maggi. Alexandrov's theorem revisited. \emph{Analysis \& PDE} \textbf{12}(6), 1613--1642, 2019. \arxiv{1711.07690}.}
+
+\pub{4}{\textbf{M.G.~Delgadino}. Convergence of a one-dimensional Cahn--Hilliard equation with degenerate mobility. \emph{SIAM Journal on Mathematical Analysis} \textbf{50}(4), 4457--4482, 2018. \arxiv{1510.05021}.}
+
+\pub{3}{\textbf{M.G.~Delgadino}, S.A.~Smith. H\"older estimates for fractional parabolic equations with critical divergence free drifts. \emph{Annales de l'Institut Henri Poincar\'e C} \textbf{35}(3), 577--604, 2018. \arxiv{1609.02691}.}
+
+\pub{2}{\textbf{M.G.~Delgadino}, F.~Maggi, C.~Mihaila, R.~Neumayer. Bubbling with $L^2$-almost constant mean curvature and an Alexandrov-type theorem for crystals. \emph{Archive for Rational Mechanics and Analysis} \textbf{230}(3), 1131--1177, 2018. \arxiv{1705.10117}.}
+
+\pub{1}{J.A.~Carrillo, \textbf{M.G.~Delgadino}, A.~Mellet. Regularity of local minimizers of the interaction energy via obstacle problems. \emph{Communications in Mathematical Physics} \textbf{343}(3), 747--781, 2016. \arxiv{1406.4040}.}
+
+\vspace{0.8em}\noindent\textbf{Interdisciplinary Work}\\[0.3em]
+
+\pub{I.3}{U.A.~Trigos-Raczkowski, R.~Lyons, \textbf{M.G.~Delgadino}, A.S.~Ackleh, A.~Ostling. Disturbance-generated competitive coexistence. Preprint, 2023. \href{https://www.biorxiv.org/content/10.1101/2023.11.02.565332v1}{\texttt{bioRxiv:2023.11.02.565332}}. \emph{Theoretical ecology / population dynamics.}}
+
+\pub{I.2}{F.N.~C\'amara Halac, \textbf{M.G.~Delgadino}. DreamSound: deep activation layer sonification. \emph{Proceedings of the International Computer Music Conference (ICMC 2021)}, Georgia Institute of Technology, 2021. \href{https://repository.gatech.edu/bitstreams/98395792-aa54-49e8-9ba4-f0d34d2aba17/download}{[full text]}. \emph{Computer music / deep-learning sonification.}}
+
+\pub{I.1}{L.D.~Simonelli, \textbf{M.G.~Delgadino}, F.N.~C\'amara Halac. Hearing the Self: A Spectral Experience. \emph{Proceedings of the International Computer Music Conference (ICMC 2017)}, Shanghai, China, 2017. \href{https://fdch.github.io/specexp/}{[website]}. \emph{Computer music / spectral sound performance.}}
+
+% =====================================================================
+\section{Grants and Awards}
+% =====================================================================
+
+\subsection*{Submitted}
+\entry{2026--2031}{NSF CAREER: \emph{Singular Particle Systems and Diffusion Models} \textbf{(pending)}. \$500{,}000.}
+
+\entry{2026--2029}{NSF-DMS Standard Grant: \emph{Interacting Diffusions with Singular Potentials: Theory and Applications to Generative Modeling} \textbf{(pending)}. \$280{,}000.}
+
+\subsection*{Awarded}
+
+\entry{2022--2026}{NSF-DMS Standard Grant: \emph{Optimal Transport Applications to Probability, Machine Learning, and Kinetic Theory}. \$220{,}000.}
+
+\entry{2020}{Rita Levi Montalcini Award (declined). \EUR{195{,}000}. Italy.}
+
+\entry{2020--2021}{Young Scientist Support, Instituto Serrapilheira. R\$\,100{,}000. Brazil.}
+
+\entry{2020--2023}{Bolsas de Produtividade em Pesquisa, CNPq. R\$\,40{,}000. Brazil.}
+
+% =====================================================================
+\section{Ph.D.\ Students}
+% =====================================================================
+
+\entry{2026--Present}{\textbf{Jakob Wellington}, UT Austin. Co-advised with Prof.\ F.\ Maggi.}
+
+\entry{2025--Present}{\textbf{Luca Melzi}, Imperial College London. Co-advised with Prof.\ M.\ Coti Zelati.}
+
+\entry{2025--Present}{\textbf{Francisco Unai Caja-Lopez}, UT Austin. Co-advised with Prof.\ M.P.\ Gualdani.}
+
+\entry{2023--Present}{\textbf{Will Porteous}, UT Austin. Co-advised with Prof.\ I.M.\ Gamba.}
+
+\entry{2021--2025}{\textbf{Kenneth DeMason}, UT Austin. Currently postdoc at McMaster University.}
+
+\entry{2020--2022}{\textbf{Daniel Weser}, UT Austin. Co-advised with Prof.\ F.\ Maggi. Currently postdoc at UNC.}
+
+\entry{2018--2022}{\textbf{Jeremy Wu}, University of Oxford. Co-advised with Prof.\ J.A.\ Carrillo. Postdoc at UCLA; currently Assistant Professor at the University of Manitoba.}
+
+% =====================================================================
+\section{Postdoctoral Mentoring}
+% =====================================================================
+
+\entry{2022--2025}{\textbf{Rene Cabrera}, Postdoc supported by the Analysis RTG, UT Austin. Joint publication in \emph{Journal of Machine Learning Research}. Currently Instructor at UT Austin.}
+
+\entry{2021--2023}{\textbf{Mary Vaughan}, Postdoc supported by the Analysis RTG, UT Austin. Joint publication in \emph{Analysis \& PDE}. Postdoc at University of Western Australia; currently Assistant Professor at Texas State University.}
+
+% =====================================================================
+\section{Undergraduate Mentoring}
+% =====================================================================
+
+\entry{2022--2024}{\textbf{Reese Feldmeier}, Dean's Honors Program, UT Austin. REU funded by the Analysis RTG; undergraduate research and senior thesis advisor. Currently Ph.D.\ 
+student at Stanford.}
+\entry{2019--2021}{\textbf{Bruno Suassuna} PUC-Rio, Brazil. Currently Ph.D.\ student at PUC-Rio.}
+\entry{2019--2021}{\textbf{Humberto Seghetto} \href{https://picme.obmep.org.br/}{PICME},PUC-Rio, Brazil. Currently Ph.D.\ student at PUC-Rio.}
+
+% =====================================================================
+\section{Conference and Workshop Organization}
+% =====================================================================
+
+\entry{Fall 2025}{Organizing Committee, \href{https://www.siam.org/conferences-events/past-event-archive/pd25/}{SIAM Conference on Analysis of Partial Differential Equations (PD25)}.}
+
+\entry{Spring 2024}{Main Organizer, \href{https://analysispde.ma.utexas.edu/winter-program-in-ml-2024/}{Winter School in Machine Learning}, UT Austin.}
+
+\entry{2019}{Main Organizer, UNESCO/ICTP 1st Latin American School in Applied Mathematics. UFSQ/EPN, Quito, Ecuador. \href{https://www.youtube.com/watch?v=GpmSgL35Lcw}{[video]}.}
+
+
+% =====================================================================
+\section{Professional Service}
+% =====================================================================
+
+\entry{Grant Panels}{NSF-DMS Standard Panel (2023); NSF Mathematical Foundations of AI Panel (2025, 2026).}
+
+\entry{Journals}{%
+Inventiones Mathematicae;
+Journal of the European Mathematical Society;
+Archive for Rational Mechanics and Analysis;
+Communications in Mathematical Physics;
+Analysis \& PDE;
+ESAIM: Control, Optimisation and Calculus of Variations;
+Journal of Functional Analysis;
+SIAM Journal on Mathematical Analysis;
+Probability Theory and Related Fields;
+Annals of Probability;
+Annales de l'Institut Henri Poincar\'e C;
+Transactions of the American Mathematical Society;
+Nonlinearity;
+Mathematical Models and Methods in Applied Sciences.
+}
+
+% =====================================================================
+\section{Invited Talks}
+% =====================================================================
+
+\noindent\textit{Talks are grouped by topic; within each group, listed in reverse chronological order.}\\[0.4em]
+
+\talkgroup{On Diffusion Posterior Sampling.}
+\entry{May 2026}{Imperial Collega, London, UK}
+\entry{May 2026}{OxPDE, University of Oxford, Oxford, UK}
+\entry{March 2026}{University of Arizona, Tucson, USA.}
+\entry{March 2026}{North Carolina State University, USA.}
+
+\talkgroup{Sharp estimates for the log-gas.}
+\entry{November 2025}{Minisymposium: Advances in PDE Modeling and Analysis for Life and Social Sciences, SIAM PD25, Pittsburgh, USA.}
+\entry{October 2025}{Calder\'on--Zygmund Seminar, University of Chicago, USA.}
+\entry{August 2025}{National University of Singapore, Singapore.}
+\entry{May 2025}{Center for Nonlinear Analysis, Carnegie Mellon University, Pittsburgh, USA.}
+
+\talkgroup{Generative Adversarial Networks: Dynamics and Mode Collapse.}
+\entry{August 2024}{Banff--Oaxaca Workshop, Oaxaca, Mexico.}
+\entry{July 2024}{AMS--UMI Joint Meeting Mini-symposium, Palermo, Italy.}
+\entry{May 2024}{Texas Differential Equations Conference (TXDE), Texas State University, San Marcos, USA.}
+\entry{April 2024}{Calder\'on--Zygmund Seminar, University of Chicago, USA.}
+\entry{April 2024}{CIRM Workshop, Marseille, France.}
+\entry{April 2024}{VAPS Online Seminar (hosted by UCLA).}
+\entry{March 2024}{Seminar, Vanderbilt University, USA.}
+\entry{January 2024}{Conference on Numerical Methods for Optimal Transport Problems, Mean Field Games, and Multi-Agent Dynamics, Universidad T\'ecnica Federico Santa Mar\'ia, Valpara\'iso, Chile.}
+
+\talkgroup{Entropy maximization in the two-dimensional Euler equations.}
+\entry{December 2023}{Workshop on Recent Advances in Fluid Dynamics: Singularity, Regularity and Mixing, Duke--Kunshan University, China.}
+\entry{December 2023}{Seminar, Chinese Academy of Sciences, China.}
+
+\talkgroup{Boltzmann to Landau from the gradient flow perspective.}
+\entry{November 2023}{BIRS: Recent Progress in Kinetic and Integro-Differential Equations, Banff, Canada (online).}
+
+\talkgroup{Phase transitions, logarithmic Sobolev inequalities, and uniform-in-time propagation of chaos for weakly interacting diffusions.}
+\entry{July 2023}{Max Planck Institute for Mathematics, Bonn, Germany.}
+\entry{July 2023}{Workshop on Interacting Particle Systems, Imperial College London, UK.}
+\entry{March 2023}{Applied Mathematics and PDE Seminar, University of Maryland, College Park, USA.}
+\entry{March 2023}{PDE Seminar, Simon Fraser University, Canada.}
+\entry{November 2022}{BIRS: Kinetic Equations, Oaxaca, Mexico.}
+\entry{March 2022}{PDE Seminar, National University of Singapore.}
+\entry{March 2022}{Workshop: Frontiers in the Interplay Between Probability and Kinetic Theory, ICMS, Edinburgh, UK.}
+\entry{February 2022}{Frontiers in Kinetic Theory (KineCon 2022), Newton Institute, Cambridge, UK.}
+
+\talkgroup{Rearrangement for higher-order models.}
+\entry{June 2023}{BIRS--IMAG: Nonlinear Diffusion and Nonlocal Interaction Models, Granada, Spain.}
+
+\talkgroup{Mixing and enhanced dissipation.}
+\entry{August 2019}{Brazilian Mathematics Colloquium: PDE Session, IMPA, Rio de Janeiro, Brazil.}
+\entry{July 2019}{Analysis Seminar, ICTP, Trieste, Italy.}
+\entry{February 2019}{Colloquium, ShanghaiTech University, China.}
+\entry{February 2019}{Analysis and PDE Seminar, University of Bath, UK.}
+\entry{December 2018}{Fluid Mechanics Seminar, Imperial College London, UK.}
+\entry{November 2018}{Fluid Mechanics Seminar, University of Warwick, UK.}
+
+\talkgroup{Propagation of chaos by Gamma-convergence.}
+\entry{June 2019}{Workshop on Optimal Transport in Analysis and Probability, Erwin Schr\"odinger Institute (ESI), Vienna, Austria.}
+\entry{May 2019}{Workshop: Probabilistic and Variational Methods in Kinetic Theory, Hausdorff Research Institute for Mathematics, Bonn, Germany.}
+
+\talkgroup{On the relationship between the thin film equation and Tanner's law.}
+\entry{January 2019}{PDE Seminar, Georgia Tech, USA.}
+\entry{October 2018}{Applied Analysis Seminar, MPI Leipzig, Germany.}
+
+\talkgroup{Alexandrov's theorem revisited.}
+\entry{October 2018}{KCL/UCL Geometry Seminar, King's College London, UK.}
+\entry{July 2018}{Calculus of Variations and Geometric Measure Theory Conference, University of Sussex, UK.}
+\entry{March 2018}{Analysis Seminar, University of Texas at Austin, USA.}
+\entry{March 2018}{PDE / Applied Mathematics Seminar, University of Maryland, College Park, USA.}
+\entry{February 2018}{Geometric Analysis Seminar, University of Sussex, UK.}
+\entry{January 2018}{PDE and Geometric Analysis Seminar, University of Cambridge, UK.}
+
+\talkgroup{Interaction energy.}
+\entry{October 2017}{PDE Seminar, Imperial College London, UK.}
+\entry{September 2017}{Analysis Seminar, University of Texas at Austin, USA.}
+\entry{July 2017}{Workshop on Aggregation-Diffusion PDEs, Anacapri, Italy.}
+\entry{May 2017}{Mathematical Analysis and Applications Seminar, Universit\`a di Pavia, Italy.}
+
+\talkgroup{The relationship between the obstacle problem and minimizers of the interaction energy.}
+\entry{October 2016}{Workshop: Interactions between Partial Differential Equations and Functional Inequalities, Mittag-Leffler Institute, Sweden.}
+\entry{April 2016}{Differential Equations Seminar, University of Tennessee, Knoxville, USA.}
+\entry{March 2016}{Nonlinear Analysis and PDEs Seminar, City University of New York, USA.}
+\entry{June 2015}{6th Symposium on Analysis and PDEs, Purdue University, USA.}
+
+\end{document}
