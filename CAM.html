@@ -222,11 +222,12 @@
                 });
 
                 // Identify the current calendar semester to set as the default open section
+                // Determine the current academic semester based on the current month
                 const now = new Date();
                 const month = now.getMonth();
                 let curSem = "Fall";
-                if (month <= 4) curSem = "Spring";
-                else if (month <= 6) curSem = "Summer";
+                // if (month <= 4) curSem = "Spring";
+                // else if (month <= 6) curSem = "Summer";
                 
                 const currentSemesterKey = `${now.getFullYear()}|${curSem}`;
                 const openKey = semesters.includes(currentSemesterKey) ? currentSemesterKey : semesters[0];
