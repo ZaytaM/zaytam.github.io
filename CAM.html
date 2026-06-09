@@ -129,6 +129,11 @@
         const semOrder = { Spring: 1, Summer: 2, Fall: 3, Winter: 4 };
         const DEFAULT_TIME = "11:00 AM";
         const DEFAULT_LOCATION = "PMA 7.124";
+        
+        // Change this to set which semester is expanded by default. 
+        // Use the format "YYYY|Semester" (e.g., "2026|Fall", "2027|Spring").
+        // Set to null to automatically open the current calendar semester.
+        const DEFAULT_OPEN_SEMESTER = "2026|Fall";
 
         function metaLine(s) {
             const time = s.Time || DEFAULT_TIME;
