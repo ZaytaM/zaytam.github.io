@@ -45,4 +45,6 @@ dd{
   }
 }
 
-a { color: inherit; }
+/* Links: visible accent on the dark background */
+a { color: #6cb6ff; }
+a:hover, a:focus { color: #a5d3ff; text-decoration: underline; }
