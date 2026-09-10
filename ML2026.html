@@ -100,68 +100,68 @@
             <td>Tue, Aug 25</td>
             <td>Introduction. Data as samples from a distribution. Python/NumPy basics</td>
             <td><a href="https://colab.research.google.com/drive/1E9n-1vxaDhBR0GMZurisQCKR-sdRZODQ" aria-label="Lecture notes: Introduction, data as samples from a distribution">Notes</a></td>
-            <td><a href="https://colab.research.google.com/drive/15-GiJfnMwyYrRoF956G2a3h6gcjEJ88F" aria-label="Practice notebook 1: Python basics">Practice 1</a> out (Python)</td>
+            <td><a href="https://colab.research.google.com/drive/15-GiJfnMwyYrRoF956G2a3h6gcjEJ88F" aria-label="Practice notebook 1: Python basics">Practice 1</a> (Python)</td>
             <td>Syllabus</td>
           </tr>
           <tr>
             <td>Thu, Aug 27</td>
             <td>Sampling from distributions: uniform, Gaussian; histograms vs. densities; empirical distribution</td>
             <td><a href="https://colab.research.google.com/drive/1Am2f9_ImW3i_viZI_JNGI2ctC2AgBP8V" aria-label="Lecture notes: sampling, histograms vs densities, empirical distribution">Notes</a></td>
-            <td><a href="https://drive.google.com/file/d/1TUvqHAKy9851OaJEFRb-37lWXCIaqfXb/view?usp=sharing" aria-label="Quiz 0: prerequisite diagnostic quiz (PDF)">Quiz 0 (ungraded)</a></td>
+            <td><a href="ML2026_Quiz_0.pdf" aria-label="Quiz 0: prerequisite diagnostic quiz (PDF)">Quiz 0 (ungraded)</a> &middot; <a href="ML2026_Quiz_0_Solutions.pdf" aria-label="Quiz 0 solutions (PDF)">solutions</a></td>
             <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
             <td>Tue, Sep 1</td>
             <td>Multivariate Gaussians and mixtures, operationally: sampling, mean, covariance</td>
             <td><a href="https://colab.research.google.com/drive/1effhPnEk8F0ggQuxRowtdUSiqxgMmuSj" aria-label="Lecture notes: Gaussians, sampling, change of variables, and the best fit">Notes</a></td>
-            <td><a href="https://colab.research.google.com/drive/1KeiSfpDk67R5zV3ssbWCA2JUO9k42YzC" aria-label="Practice notebook 2: sampling, Gaussians, and entropy">Practice 2</a> out (NumPy + sampling)</td>
+            <td><a href="https://colab.research.google.com/drive/1KeiSfpDk67R5zV3ssbWCA2JUO9k42YzC" aria-label="Practice notebook 2: sampling, Gaussians, and entropy">Practice 2</a> (NumPy + sampling)</td>
             <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
             <td>Thu, Sep 3</td>
             <td>Matrices that stretch Gaussians; is the best fit a good model? Mixtures of Gaussians by gradient descent</td>
             <td><a href="https://colab.research.google.com/drive/13wMZF06LHQtnB_ILDHhJyWczDnmE6_TM" aria-label="Lecture notes: matrix transforms of Gaussians, model testing, mixtures by gradient descent">Notes</a></td>
-            <td>Quiz 1</td>
-            <td>C&amp;O &sect;9.1, &sect;7.4</td>
+            <td><a href="ML2026_Quiz_1.pdf" aria-label="Quiz 1 (PDF)">Quiz 1</a> &middot; <a href="ML2026_Quiz_1_Solutions.pdf" aria-label="Quiz 1 solutions (PDF)">solutions</a></td>
+            <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
             <td>Tue, Sep 8</td>
-            <td>Can we tell a uniform from a Gaussian? Two-bin tests, the CLT threshold 2nD &rarr; &chi;&sup2;, and Sanov's theorem</td>
-            <td></td>
-            <td>Practice 3 out (model testing)</td>
+            <td>Maximum likelihood; the two-bin test by hand; sizing the experiment; Sanov's theorem exactly</td>
+            <td><a href="https://colab.research.google.com/drive/1qdkN9MEXhFy8pkFqoMe3DZ_TaE-dAM7U" aria-label="Lecture notes: maximum likelihood, the two-bin test, and Sanov's theorem">Notes</a></td>
+            <td><a href="https://colab.research.google.com/drive/1Vjpsf_wLf0pE8m38YH8mRxbKYR94ZkVO" aria-label="Practice notebook 3: the optimal Gaussian and Sanov's theorem">Practice 3</a> (Gaussian fit + Sanov)</td>
             <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
             <td>Thu, Sep 10</td>
             <td>Relative entropy for densities; Gibbs&rsquo; inequality and maximum likelihood as D-minimization; generative models: mixtures, pushforwards, GANs, diffusion</td>
             <td><a href="https://colab.research.google.com/drive/1KDsF4DCVI5kXOENOQLQqn1JR1elm3JPs" aria-label="Lecture notes: relative entropy for densities, Gibbs' inequality, and generative models">Notes</a></td>
-            <td>Quiz 2; <a href="https://colab.research.google.com/drive/1K_JXrHlw7ZmHmyZPmf1WqAudFDasEn5e" aria-label="Practice notebook 4: CLT and chi-squared model testing">Practice 4</a> out</td>
+            <td>Quiz 2 &middot; <a href="https://colab.research.google.com/drive/1K_JXrHlw7ZmHmyZPmf1WqAudFDasEn5e" aria-label="Practice notebook 4: CLT and chi-squared model testing">Practice 4</a> (model testing)</td>
             <td>&mdash;</td>
           </tr>
           <tr>
             <td>Tue, Sep 15</td>
-            <td>Random walks on graphs; the transition matrix; matrix&ndash;vector product as one step</td>
+            <td>Adjacency and degree matrices; walks via powers of A; connectivity, shortest paths</td>
             <td></td>
             <td>&mdash;</td>
-            <td>Zitkovic; C&amp;O Ch. 3</td>
+            <td>C&amp;O &sect;9.1&ndash;9.2, &sect;9.5</td>
           </tr>
           <tr>
             <td>Thu, Sep 17</td>
-            <td>Simulation lab: random-walk experiments</td>
+            <td>The graph Laplacian as bookkeeping; clustering sampled data, experimentally</td>
             <td></td>
             <td>Quiz 3</td>
-            <td>&mdash;</td>
+            <td>C&amp;O &sect;9.3</td>
           </tr>
           <tr>
             <td>Tue, Sep 22</td>
-            <td>The stationary distribution, empirically; fixed points &pi;P = &pi; as a linear equation</td>
+            <td>Random walks on graphs; the transition matrix; the stationary distribution, empirically</td>
             <td></td>
-            <td>Practice 5 out (Markov)</td>
-            <td>Zitkovic</td>
+            <td>Practice 5 (Markov)</td>
+            <td>Zitkovic; C&amp;O Ch. 3</td>
           </tr>
           <tr>
             <td>Thu, Sep 24</td>
-            <td>Hitting times and absorption; linear systems Ax = b</td>
+            <td>Fixed points &pi;P = &pi; as a linear equation; hitting times and absorption; linear systems Ax = b</td>
             <td></td>
             <td>Quiz 4</td>
             <td>Zitkovic; C&amp;O Ch. 3</td>
@@ -170,7 +170,7 @@
             <td>Tue, Sep 29</td>
             <td>Convergence as power iteration; eigenvalues and eigenvectors; stationary distribution as eigenvector</td>
             <td></td>
-            <td>Midterm 1 practice out</td>
+            <td>Midterm 1 practice</td>
             <td>C&amp;O &sect;5.1</td>
           </tr>
           <tr>
@@ -191,7 +191,7 @@
             <td>Thu, Oct 8</td>
             <td>Coordinates for data and distributions: vector spaces, bases, orthogonality</td>
             <td></td>
-            <td>Practice 6 out (linear algebra)</td>
+            <td>Practice 6 (linear algebra)</td>
             <td>C&amp;O Ch. 1&ndash;2</td>
           </tr>
           <tr>
@@ -233,7 +233,7 @@
             <td>Tue, Nov 3</td>
             <td>Spectral clustering via the graph Laplacian</td>
             <td></td>
-            <td>Practice 7 out (SVD/eigen)</td>
+            <td>Practice 7 (SVD/eigen)</td>
             <td>C&amp;O &sect;9.4, &sect;9.7.2</td>
           </tr>
           <tr>
@@ -247,21 +247,21 @@
             <td>Tue, Nov 10</td>
             <td>PCA compression; best approximating subspace</td>
             <td></td>
-            <td>Practice 8 out (PCA)</td>
+            <td>Practice 8 (PCA)</td>
             <td>C&amp;O &sect;8.2&ndash;8.3</td>
           </tr>
           <tr>
             <td>Thu, Nov 12</td>
             <td>The multivariate Gaussian, formally: affine image of N(0, I); sampling via &Sigma;<sup>1/2</sup></td>
             <td></td>
-            <td>Quiz 9; Midterm 2 practice out</td>
+            <td>Quiz 9; Midterm 2 practice</td>
             <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
             <td>Tue, Nov 17</td>
             <td>Mixtures of Gaussians: density, latent variables; GMM as soft k-means</td>
             <td></td>
-            <td>Practice 9 out (Gaussian sampling)</td>
+            <td>Practice 9 (Gaussian sampling)</td>
             <td>&mdash;</td>
           </tr>
           <tr class="exam">
@@ -282,7 +282,7 @@
             <td>Tue, Dec 1</td>
             <td>Generative models: forward diffusion as a noising Markov chain; reversing the chain; closed-form scores for Gaussian mixtures</td>
             <td></td>
-            <td>Final practice out</td>
+            <td>Final practice</td>
             <td>Lecture notes</td>
           </tr>
           <tr>
