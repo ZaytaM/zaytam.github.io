@@ -191,84 +191,91 @@
           </tr>
           <tr>
             <td>Thu, Oct 8</td>
-            <td>Coordinates for data and distributions: vector spaces, bases, orthogonality</td>
-            <td></td>
-            <td>Practice 6 (linear algebra)</td>
-            <td>C&amp;O Ch. 1&ndash;2</td>
+            <td>Sampling a given measure: detailed balance, Metropolis, and Langevin dynamics. From the random walk to Brownian motion (the CLT); the lazy walk as the heat equation; Brownian motion with a pull as the forward process of diffusion models; stochastic gradient descent</td>
+            <td><a href="https://drive.google.com/file/d/10_wVNAU9oPJGLV56T62eg_HS8mraRF2k/view?usp=sharing" aria-label="Lecture 13 notes: sampling a given measure, detailed balance, Metropolis, Brownian motion, Langevin dynamics">Notes</a></td>
+            <td>&mdash;</td>
+            <td>Zitkovic, Brownian motion chapter; C&amp;O &sect;9.6</td>
           </tr>
           <tr>
             <td>Tue, Oct 13</td>
-            <td>Projections and best approximation of data by a subspace; Gram&ndash;Schmidt, QR</td>
-            <td></td>
-            <td>&mdash;</td>
-            <td>C&amp;O &sect;2.4&ndash;2.5, &sect;4.7</td>
+            <td>Vectors you can hear and see: sounds, images and data rows as vectors; length as energy, the dot product as the cross term of &#8214;u + v&#8214;<sup>2</sup>; the dot product with a sine as a frequency detector; Fourier coordinates, Parseval, compression; the cosine basis of JPEG; projection as the matrix qq<sup>T</sup></td>
+            <td><a href="https://drive.google.com/file/d/1pLWF3fQCYIzhl3jUTbHYXZBKAOP7sKAj/view?usp=sharing" aria-label="Lecture 14 notes: vectors you can hear and see, dot products, Fourier coordinates, projection as a matrix">Notes</a></td>
+            <td>Practice 6 (random walks, detailed balance, vectors; released Mon Oct 12)</td>
+            <td>C&amp;O &sect;1.1&ndash;1.3, &sect;4.1</td>
           </tr>
           <tr>
             <td>Thu, Oct 15</td>
-            <td>Spectral theorem: covariance matrices of data; reversible chains and reversing a random walk</td>
+            <td>Projection as the closest point: Pythagoras, orthonormal coordinates and energy (Parseval), low-pass filtering; least squares as the closest point in the column space; regression with features; overfitting</td>
             <td></td>
             <td>Quiz 6</td>
-            <td>C&amp;O &sect;5.3</td>
+            <td>C&amp;O &sect;4.1&ndash;4.4</td>
           </tr>
           <tr>
             <td>Tue, Oct 20</td>
-            <td>Rayleigh quotients: max-variance directions in data; Perron&ndash;Frobenius, spectral gap, convergence rate</td>
+            <td>Quadratic energies (Dirichlet energy, variance in a direction) and the directions with no cross terms: eigenvectors; the spectral theorem on a 2&times;2 by hand and stated in general</td>
             <td></td>
             <td>&mdash;</td>
-            <td>C&amp;O &sect;5.4&ndash;5.6</td>
+            <td>C&amp;O &sect;5.2&ndash;5.3</td>
           </tr>
           <tr>
             <td>Thu, Oct 22</td>
-            <td>SVD of the data matrix; low-rank approximation</td>
+            <td>PCA: the direction of most variance; projection onto the top components and the reconstruction error; eigen-digits and image compression; learned basis (PCA) vs. fixed bases (DCT/JPEG, Haar)</td>
             <td></td>
             <td>Quiz 7</td>
-            <td>C&amp;O &sect;5.7</td>
+            <td>C&amp;O &sect;8.1&ndash;8.2</td>
+          </tr>
+          <tr>
+            <td>Tue, Oct 27</td>
+            <td>Problem session: projections, least squares, eigenvectors, PCA by hand</td>
+            <td></td>
+            <td>Practice 7 (eigenvectors, PCA)</td>
+            <td>C&amp;O Ch. 5</td>
           </tr>
           <tr>
             <td>Thu, Oct 29</td>
-            <td>Lab: k-means clustering hands-on</td>
+            <td>Lab: compression hands-on &mdash; Fourier, Haar and PCA on sounds and images</td>
             <td></td>
             <td>&mdash;</td>
-            <td>C&amp;O &sect;7.5</td>
+            <td>&mdash;</td>
           </tr>
           <tr>
             <td>Tue, Nov 3</td>
-            <td>Spectral clustering via the graph Laplacian</td>
+            <td>Going downhill: gradient descent in the simplest terms &mdash; a parabola, the step size, two coordinates and the condition number, eigenvalues as rates; least squares by descent</td>
             <td></td>
-            <td>Practice 7 (SVD/eigen)</td>
-            <td>C&amp;O &sect;9.4, &sect;9.7.2</td>
+            <td>&mdash;</td>
+            <td>C&amp;O &sect;5.1</td>
           </tr>
           <tr>
             <td>Thu, Nov 5</td>
-            <td>PCA via SVD; the covariance matrix</td>
+            <td>SVD: the best rank-k picture of a data matrix; encoder/decoder; Eckart&ndash;Young; power method</td>
             <td></td>
             <td>Quiz 8</td>
-            <td>C&amp;O &sect;8.1</td>
+            <td>C&amp;O &sect;5.7, &sect;8.3</td>
           </tr>
           <tr>
             <td>Tue, Nov 10</td>
-            <td>PCA compression; best approximating subspace</td>
+            <td>The Gaussian as e<sup>&minus;energy</sup>: N(&mu;, &Sigma;), ellipses with PCA axes, product of 1D Gaussians in eigen-coordinates; sampling via &Sigma;<sup>1/2</sup></td>
             <td></td>
-            <td>Practice 8 (PCA)</td>
-            <td>C&amp;O &sect;8.2&ndash;8.3</td>
-          </tr>
-          <tr>
-            <td>Thu, Nov 12</td>
-            <td>The multivariate Gaussian, formally: affine image of N(0, I); sampling via &Sigma;<sup>1/2</sup></td>
-            <td></td>
-            <td>Quiz 9; Midterm 2 practice</td>
+            <td>Practice 8 (Gaussians, MLE regression)</td>
             <td>C&amp;O &sect;7.1</td>
           </tr>
           <tr>
-            <td>Tue, Nov 17</td>
-            <td>Mixtures of Gaussians: density, latent variables; GMM as soft k-means</td>
+            <td>Thu, Nov 12</td>
+            <td>Regression as maximum likelihood: Gaussian noise gives the least-squares energy; ridge as an added energy; train/test split</td>
             <td></td>
-            <td>Practice 9 (Gaussian sampling)</td>
+            <td>Quiz 9; Midterm 2 practice</td>
+            <td>C&amp;O &sect;4.5&ndash;4.6</td>
+          </tr>
+          <tr>
+            <td>Tue, Nov 17</td>
+            <td>Classification as an energy for labels: logistic regression, cross-entropy, one descent step; MNIST 0 vs. 1; softmax</td>
+            <td></td>
             <td>&mdash;</td>
+            <td>C&amp;O &sect;7.3</td>
           </tr>
           <tr class="exam">
             <td>Thu, Nov 19</td>
-            <td><strong>Midterm 2</strong>: eigen-theory, spectral theorem, SVD, spectral clustering, PCA</td>
+            <td><strong>Midterm 2</strong>: PageRank, Brownian motion and sampling, Fourier coordinates, projection and least squares, quadratic energies and eigenvectors, PCA, gradient descent, SVD, Gaussians, maximum-likelihood regression, logistic regression (Lectures 12&ndash;22)</td>
             <td></td>
             <td>&mdash;</td>
             <td>&mdash;</td>
@@ -282,21 +289,21 @@
           </tr>
           <tr>
             <td>Tue, Dec 1</td>
-            <td>Generative models: forward diffusion as a noising Markov chain; reversing the chain; closed-form scores for Gaussian mixtures</td>
+            <td>Generation as descent on an energy plus noise: forward diffusion as repeated Gaussian noising; the score; reversing the chain; closed-form scores for Gaussian mixtures</td>
             <td></td>
             <td>Final practice</td>
             <td>Lecture notes</td>
           </tr>
           <tr>
             <td>Thu, Dec 3</td>
-            <td>Review for final</td>
+            <td>Review for final: one idea (energy picks the coordinates), one theorem (spectral theorem), one algorithm (descent)</td>
             <td></td>
             <td>&mdash;</td>
             <td>&mdash;</td>
           </tr>
           <tr class="exam">
             <td>Sat, Dec 12</td>
-            <td><strong>Final Exam</strong>, 1:00&ndash;3:00 PM (room TBD): cumulative; emphasis on spectral methods, PCA, Gaussians, generative models</td>
+            <td><strong>Final Exam</strong>, 1:00&ndash;3:00 PM, PMA 5.122: cumulative; emphasis on projections, eigenvectors and PCA, gradient descent, Gaussians, generative models</td>
             <td></td>
             <td>&mdash;</td>
             <td>&mdash;</td>
