@@ -254,24 +254,24 @@
           </tr>
           <tr>
             <td>Tue, Nov 10</td>
-            <td>Regression as maximum likelihood: Gaussian noise gives the least-squares energy; ridge as an added energy; train/test split</td>
+            <td>Stability and convergence of gradient descent: the bowl and the condition h &lt; 2/&lambda;<sub>max</sub>; the descent lemma (the energy decreases and the gradient goes to zero); sharpness of a minimum; gradient descent can only settle at minima with sharpness at most 2/h, so the step size chooses the minimum; the edge of stability in a small network</td>
             <td></td>
             <td><a href="ML2026_Midterm_2_Practice.pdf" aria-label="Midterm 2 practice sheet (PDF)">Midterm 2 practice</a></td>
-            <td>C&amp;O &sect;4.5&ndash;4.6</td>
+            <td>C&amp;O &sect;5.1&ndash;5.2</td>
           </tr>
           <tr>
             <td>Thu, Nov 12</td>
-            <td>Regression with features: polynomial and Fourier features, the ridge sweep and the choice of the penalty by test error; kernels in one line; a neural network as learned features</td>
+            <td>Supervised learning and loss functions: data (x, y), model, loss; squared error as Gaussian maximum likelihood; cross-entropy with softmax as maximum likelihood for labels; a network as a composition of layers; backpropagation as the chain rule; a small network on MNIST</td>
             <td></td>
             <td>Quiz 10 (optional)</td>
-            <td>C&amp;O &sect;4.7, &sect;7.2</td>
+            <td>C&amp;O &sect;7.2&ndash;7.3</td>
           </tr>
           <tr>
             <td>Tue, Nov 17</td>
-            <td>Open (topic to be announced)</td>
+            <td>Architectures that work: an architecture as a constraint on the weights; convolution (shared weights, local filters) against a dense layer; residual networks x + f(x) and why the skip connection keeps deep networks trainable; architecture drawings</td>
             <td></td>
             <td>&mdash;</td>
-            <td>&mdash;</td>
+            <td>C&amp;O &sect;7.5</td>
           </tr>
           <tr class="exam">
             <td>Thu, Nov 19</td>
@@ -289,21 +289,21 @@
           </tr>
           <tr>
             <td>Tue, Dec 1</td>
-            <td>Neural networks: a two-layer network as learned features; backpropagation as the chain rule; gradient descent on MNIST; what PCA, fixed features and networks share</td>
+            <td>Latent spaces and the language of tokens: the last hidden layer as learned features; PCA of the latent space; the autoencoder as nonlinear PCA; tokenization (byte-pair encoding); embeddings as vectors and cosine similarity; next-token cross-entropy as the loss</td>
             <td></td>
             <td>Final practice</td>
-            <td>C&amp;O &sect;7.5</td>
+            <td>&mdash;</td>
           </tr>
           <tr>
             <td>Thu, Dec 3</td>
-            <td>Generation as descent on an energy plus noise: diffusion as Langevin steps with a learned score; then review for the final: one idea (energy picks the coordinates), one theorem (spectral theorem), one algorithm (descent)</td>
+            <td>Transformers: attention as a data-dependent weighted average of tokens (a row-stochastic matrix); the transformer block (attention, a small network, skip connections); sampling with a temperature; then review for the final: one idea (energy picks the coordinates), one theorem (spectral theorem), one algorithm (descent)</td>
             <td></td>
             <td>&mdash;</td>
             <td>&mdash;</td>
           </tr>
           <tr class="exam">
             <td>Sat, Dec 12</td>
-            <td><strong>Final Exam</strong>, 1:00&ndash;3:00 PM, PMA 5.122: cumulative; emphasis on projections, eigenvectors and PCA, gradient descent, regression and features, neural networks, generative models</td>
+            <td><strong>Final Exam</strong>, 1:00&ndash;3:00 PM, PMA 5.122: cumulative; emphasis on projections, eigenvectors and PCA, gradient descent, features and loss functions, neural networks and their architectures</td>
             <td></td>
             <td>&mdash;</td>
             <td>&mdash;</td>
